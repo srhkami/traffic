@@ -6,27 +6,30 @@
 .div_input{
     flex: 1;
     display: flex;
-    min-width: 400px;
+    min-width: 350px;
     margin: 0px 20px;
-    justify-content: start;
-}
-
-.div_output{
-    flex: 2;
-    display: flex;
-    min-width: 400px;
-    margin: 0px 20px;
-    justify-content: start;
+    justify-content: center;
 }
 
 .div_input_0{
     flex: auto;
-    max-width: 400px;
+    max-width: 350px;
+
 }
 
 .div_input_1{
     display: flex;
 }
+
+
+.div_output{
+    flex: 2;
+    display: flex;
+    min-width: 350px;
+    margin: 0px 20px;
+    justify-content: start;
+}
+
 
 .div_output_0{
     flex: auto;
