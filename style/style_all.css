@@ -1,0 +1,23 @@
+.div_header{
+    display: flex;
+    background-color: rgb(14, 159, 255);
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+.title{
+    flex: 1;
+    text-align:center;
+    color: white;
+}
+
+.bt_header{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(19, 133, 255);
+    opacity: 30%;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 0px 10px;
+}
