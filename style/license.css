@@ -1,26 +1,66 @@
+hr{
+    color: rgb(177, 177, 177);
+    opacity: 50%
+}
+
 .div_main{
     display: flex;
     flex-wrap: wrap;
+    height: 100vh;
 }
 
 .div_input{
     flex: 1;
     display: flex;
     min-width: 350px;
-    margin: 0px 20px;
+    padding: 20px 5px;
     justify-content: center;
+    background-color: rgb(180, 230, 250);
 }
 
 .div_input_0{
     flex: auto;
-    max-width: 350px;
+    max-width: 375px;
 
 }
 
 .div_input_1{
     display: flex;
+    height: 55px;
 }
 
+.div_input_2{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input_title{
+    flex: 1;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.input_title_0{
+    flex: 1;
+    display: inline-block;
+}
+
+.input_check{
+    flex: 1;
+    display: inline-block;
+}
+
+.input_select{
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(209, 247, 255);
+    margin: 3% 0%;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+}
 
 .div_output{
     flex: 2;
@@ -35,17 +75,6 @@
     flex: auto;
 }
 
-.input_title{
-    flex: 1;
-}
-
-.input_select{
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(14, 159, 255);
-    margin: 3% 0%;
-}
 
 .comment_text{
     font-size: 12px;
@@ -56,4 +85,9 @@
     width: 100%;
     height: 40px;
     border-radius: 10px;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    background-color: rgb(90, 150, 250);
+    margin: 10px 0px 5px 0px;
 }

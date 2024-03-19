@@ -1,11 +1,13 @@
 body{ 
     margin: 0; 
-    padding: 0; 
+    padding: 0;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
 }
 
 .div_header{
     display: flex;
-    background-color: rgb(14, 159, 255);
+    background-color: rgb(90, 150, 250);
     justify-content: space-between;
     align-items: center;
     height: 50px;
@@ -13,14 +15,14 @@ body{
 
 .title{
     flex: 1;
-    text-align:center;
+    text-align: center;
     color: white;
 }
 
 .bt_header{
     width: 40px;
     height: 40px;
-    background-color: rgb(19, 133, 255);
+    background-color: rgb(90, 150, 250);
     opacity: 30%;
     cursor: pointer;
     border-radius: 50%;

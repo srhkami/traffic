@@ -4,6 +4,9 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <title>駕照違規速查</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./style/style_all.css"/>
         <link rel="stylesheet" href="./style/license.css"/>
     </head>
@@ -30,7 +33,7 @@
                             <option value="8">曳引車</option>
                         </select>
                     </div>
-                    <hr style="color: antiquewhite;">
+                    <hr/>
                     <div class="div_input_1">
                         <p class="input_title">◎ 汽車駕照狀態：</p>
                         <select class="input_select" name="car_type" id="car_type">
@@ -44,23 +47,28 @@
                             <option value="7">聯結車駕照</option>
                         </select>
                     </div>
-                    <hr>
+                    <hr/>
                     <div class="div_input_1">
                         <p class="input_title">◎ 機車駕照狀態：</p>
                         <select class="input_select" name="bike_type" id="bike_type">
                             <option value="0">請選擇</option>
-                            <option value="1">輕型機車</option>
-                            <option value="2">普通重型機車</option>
-                            <option value="3">大型重型機車</option>
-                            <option value="4">未曾考領機車駕照</option>
-                            <option value="5">機車駕照吊扣</option>
-                            <option value="6">機車駕照吊/註銷</option>
+                            <option value="1">未曾考領機車駕照</option>
+                            <option value="2">機車駕照吊扣</option>
+                            <option value="3">機車駕照吊/註銷</option>
+                            <option value="4">輕型機車</option>
+                            <option value="5">普通重型機車</option>
+                            <option value="6">大型重型機車</option>
                         </select>
                     </div>
-                    <hr>
+                    <hr/>
                     <div class="div_input_1">
-                        <p class="input_title">◎ 是否五年內再犯：</p>
-                        <input id="check_again" type="checkbox"/>
+                        <p class="input_title">◎ 加重處罰：</p>
+                        <select class="input_select" name="more_type" id="more_type">
+                            <option value="0">無</option>
+                            <option value="1">五年內二次以上</option>
+                            <option value="2">酒駕吊扣銷期間</option>
+                            <option value="3">以上皆是</option>
+                        </select>
                     </div>
                     <div>
                         <button id="bt_ok">查詢</button>
@@ -75,7 +83,7 @@
                         <p class="output_text">違反內容</p>
                     </div>
                     <div class="div_output_down">
-                        <h3 class="comment_title">※ 註釋</h3>
+                        <h3 class="comment_title">※ 註釋：</h3>
                         <p class="comment_text">◎一、處罰對象</p>
                         <p class="comment_text">　　(1) 21條處罰駕駛人，另舉發21.6處罰所有人並吊扣牌照。</p>
                         <p class="comment_text">　　(2) 21-1條處罰駕駛人及所有人，另舉發21-1.5吊扣牌照。</p>
@@ -87,7 +95,9 @@
                         <p class="comment_text">　　(2) 持大客車駕照，駕駛雙節式大客車。</p>
                         <p class="comment_text">　　(3) 持黃牌大重機駕照，駕駛紅牌大重機。</p>
                         <p class="comment_text">　　(4) 駕照限自排車，駕駛手排車。</p>
-                    
+                        <h3 class="comment_title">※ 參考資料：</h3>
+                        <p class="comment_text"> • 交通部113年1月10日交路字第1105015347號函</p>
+                        <p class="comment_text"> • 研商「我國駕駛執照持照狀態及駕駛車種適法性對照表」會議紀錄</p>
                     </div>
                 </div>
             </div>   
