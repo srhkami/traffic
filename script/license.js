@@ -6,14 +6,17 @@ function search_start(drive_type, car_type, bike_type, more_type){
     x = x + (car_type-1)*6;
     x = x + bike_type;
     const code = violation_code[x-1];
-    if (more_type == 0 || more_type == 2) {
+    if (more_type == 0) {
         document.querySelector('.output_title').innerHTML = violation_list[code];
-        document.querySelector('.output_text').innerHTML = violation_text[code];
     }
-    else{
+        else{
         document.querySelector('.output_title').innerHTML = violation_again_list[code];
-        document.querySelector('.output_text').innerHTML = violation_text[code];
     }
+    if (drive_type == 8 && code == 15){
+        document.querySelector('.tip').innerHTML = '曳引車無明文處罰規定，僅供參考'; 
+    }
+    document.querySelector('.output_text').innerHTML = violation_text[code];
+
     
 };
 
@@ -23,11 +26,11 @@ document.querySelector('#bt_ok').addEventListener('click',(buttin)=>{
     const car_type = Number(document.querySelector('#car_type').value);
     const bike_type = Number(document.querySelector('#bike_type').value);
     const more_type = Number(document.querySelector('#more_type').value);
-    console.log(more_type)
     if (drive_type==0 || car_type==0 || bike_type==0){
-        console.log('選項為空！');
+        document.querySelector('.tip').innerHTML = '選項請勿留空！'; 
     }
     else{
+        document.querySelector('.tip').innerHTML = '　'; 
         search_start(drive_type, car_type, bike_type, more_type);
     };
 });
