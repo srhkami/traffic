@@ -13,23 +13,25 @@ body{
     height: 50px;
 }
 
-.title{
+.page_title{
     flex: 1;
     text-align: center;
     color: white;
 }
 
-.bt_header{
-    width: 40px;
-    height: 40px;
-    background-color: rgb(90, 150, 250);
-    opacity: 30%;
-    cursor: pointer;
-    border-radius: 50%;
+.btn_header{
+    width: 35px;
+    height: 35px;
     margin: 0px 10px;
 }
+
+.btn_menu{
+    cursor: pointer;
+}
+
 
 .icons_text{
     height: 25px;
     vertical-align:middle;
 }
+

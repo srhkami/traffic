@@ -1,0 +1,13 @@
+.block_home{
+    background-color: aqua;
+    margin: 10px;
+    min-width: 100px;
+    height: 150px
+}
+
+.block_url{
+    display: block;
+    height: 100%;
+    width: 100%;
+
+}
