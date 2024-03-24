@@ -1,0 +1,55 @@
+body{ 
+    margin: 0; 
+    padding: 0;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+}
+
+button{
+    cursor: pointer;
+}
+
+select{
+    cursor: pointer;
+}
+
+.div_header{
+    display: flex;
+    background-color: rgb(90, 150, 250);
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    position: fixed;
+    right: 0px;
+    left: 0px;
+}
+
+.div_main{
+    padding-top: 50px;
+    height: 100%;
+    background-color: rgb(207, 255, 216);
+    overflow: hidden;
+}
+
+.page_title{
+    flex: 1;
+    text-align: center;
+    color: white;
+}
+
+.btn_header{
+    width: 35px;
+    height: 35px;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+.btn_nothing{
+    cursor: auto;
+}
+
+.icons_text{
+    height: 25px;
+    vertical-align:middle;
+}
+

@@ -3,10 +3,10 @@ hr{
     opacity: 50%
 }
 
-.div_main{
+.div_page_license{
     display: flex;
     flex-wrap: wrap;
-    height: 100vh;
+    height: 100%;
 }
 
 .div_input{
@@ -35,12 +35,6 @@ hr{
     display: flex;
     align-items: center
 }
-
-/* .div_input_2{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-} */
 
 .input_title{
     flex: 1;
@@ -73,19 +67,42 @@ hr{
     flex: 2;
     display: flex;
     min-width: 350px;
+    max-height: 100%;
     margin: 0px 20px;
     justify-content: start;
+    overflow:auto;
 }
 
+@media (max-width:700px){
+    .div_output{
+        overflow: visible;
+    }
+}
 
 .div_output_0{
     flex: auto;
 }
 
+.output_title{
+    font-size: 20px;
+    color: red;
+}
+
+.output_text_1{
+    font-size: 18px;
+    color: red;
+}
+
+.output_text_2{
+    font-size: 16px;
+    color: rgb(129, 19, 255);
+}
 
 .comment_text{
     font-size: 12px;
-    line-height: 1;
+    line-height: 1.5;
+    text-indent: -2rem;
+    margin-left: 2rem;
 }
 
 #bt_ok{
