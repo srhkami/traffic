@@ -3,17 +3,16 @@ hr{
     opacity: 50%
 }
 
-.div_page_regulations{
+.div_main{
     display: flex;
     flex-wrap: wrap;
-    height: 90vh;
 }
 
 .div_input{
     flex: 1;
-    min-width: 350px;
+    min-width: 320px;
     height: 100%;
-    padding: 20px 5px;
+    padding: 0px 5px;
     /* justify-content: center; */
     background-color: rgb(180, 230, 250);
     overflow: auto;
@@ -31,6 +30,7 @@ hr{
     margin: 5px 0px;
     cursor: pointer;
     position: relative;
+    box-sizing:border-box;
 }
 
 .block_list::before{
@@ -74,19 +74,47 @@ hr{
 
 .div_output{
     flex: 2;
-    min-width: 350px;
+    min-width: 300px;
+    height: 100%;
     margin: 0px 20px;
+    /* background-color: white; */
     justify-content: start;
     counter-reset: index 0;
+    overflow: auto;
+}
+
+.div_output_text{
+    position: relative; 
+    overflow: auto;
+    line-height: 2;
 }
 
 .output_text{
     margin-left: 2em;
 }
 
-.div_output_text{
-    position: relative; 
-    overflow: auto;
+.line-0000{
+    margin-left: 2em;
+}
+
+.line-0004{
+    margin-left: 5em;
+    text-indent: -3em;
+}
+
+.line-0006{
+    margin-left: 5em;
+    text-indent: -4em;
+}
+
+.line-0602{
+    margin-left: 6em;
+    text-indent: -1em;
+}
+
+.line-0505{
+    margin-left: 7em;
+    text-indent: -2.5em;
 }
 
 .show-number::before{
@@ -99,4 +127,11 @@ hr{
     width: 3em;
     font-size: 1.05em;
     color: #636363;
+}
+
+@media (max-width:670px){
+    .div_output{
+        position: fixed;
+        background-color: blanchedalmond;
+    }
 }

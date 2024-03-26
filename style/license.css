@@ -3,10 +3,9 @@ hr{
     opacity: 50%
 }
 
-.div_page_license{
+.div_main{
     display: flex;
     flex-wrap: wrap;
-    height: 100%;
 }
 
 .div_input{
@@ -32,7 +31,6 @@ hr{
 .div_input_02{
     display: flex;
     height: 30px;
-    display: flex;
     align-items: center
 }
 
@@ -40,16 +38,6 @@ hr{
     flex: 1;
     font-size: 18px;
     font-weight: 600;
-}
-
-.input_title_0{
-    flex: 1;
-    display: inline-block;
-}
-
-.input_check{
-    flex: 1;
-    display: inline-block;
 }
 
 .input_select{
@@ -63,14 +51,17 @@ hr{
     text-align: center;
 }
 
+#input_select:disabled{
+    background-color: rgb(0, 0, 0);
+}
+
 .div_output{
     flex: 2;
-    display: flex;
     min-width: 350px;
     max-height: 100%;
     margin: 0px 20px;
     justify-content: start;
-    overflow:auto;
+    overflow: auto;
 }
 
 @media (max-width:700px){
@@ -124,3 +115,4 @@ hr{
     line-height: 1;
     flex: auto;
 }
+
