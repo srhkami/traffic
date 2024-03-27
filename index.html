@@ -8,7 +8,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./style/general.css"/>
-        <link rel="stylesheet" href="./style/home.css"/>    
+        <link rel="stylesheet" href="./style/index.css"/>    
     </head>
     <body>
         <div class="div_header">
@@ -17,36 +17,71 @@
             <img class="btn_search btn_header" src="./icons/icon_search.png" alt="選單">
         </div>
         <div class="div_main">
-            <div class="div_page_home">
-                <div class="block_home">
-                    <a href="./pages/driving_license.html">
-                        <p class="btn_home_text">駕照違規速查</p>  
-                    </a>   
+            <div class="div_left div_big_block">
+                <div class="div_title">
+                    <h2 class="title">法規彙整</h2>
+                </div >
+                <div class="div_list">
+                    <ul class="list">
+                        <li class="list_value">
+                            <a href="./pages/regulations.html?r=PH">
+                                <img class="icon_list" src="./icons/icon_law.png" alt="">
+                                <p class="btn_home_text">處罰條例</p> 
+                                <img class="icon_list_2" src="./icons/icon_go.png" alt="">
+                            </a>   
+                        </li>
+                        <li class="list_value">
+                            <a href="./pages/regulations.html?r=SR">
+                                <img class="icon_list" src="./icons/icon_law.png" alt="">
+                                <p class="btn_home_text">安全規則</p>  
+                                <img class="icon_list_2" src="./icons/icon_go.png" alt="">
+                            </a>
+                        </li>
+                        <li class="list_value">
+                            <a href="./pages/regulations.html?r=DR">
+                                <img class="icon_list" src="./icons/icon_law.png" alt="">
+                                <p class="btn_home_text">處理細則</p>  
+                                <img class="icon_list_2" src="./icons/icon_go.png" alt="">
+                            </a> 
+                        </li>
+                        <li class="list_value">
+                            <a href="./pages/regulations.html?r=ML">
+                                <img class="icon_list" src="./icons/icon_law.png" alt="">
+                                <p class="btn_home_text">設置規則</p>  
+                                <img class="icon_list_2" src="./icons/icon_go.png" alt="">
+                            </a>   
+                        </li>
+                    </ul>
                 </div>
-                <div class="block_home">
-                    <a href="./pages/car_license.html">
-                        <p class="btn_home_text">牌照違規速查</p>  
-                    </a>   
-                </div>
-                <div class="block_home">
-                    <a href="./pages/regulations.html?name=PH">
-                        <p class="btn_home_text">處罰條例</p>  
-                    </a>   
-                </div>
-                <div class="block_home">
-                    <a href="./pages/regulations.html?name=SR">
-                        <p class="btn_home_text">安全規則</p>  
-                    </a>   
-                </div>
-                <div class="block_home">
-                    <a href="./pages/regulations.html?name=DR">
-                        <p class="btn_home_text">處理細則</p>  
-                    </a>   
-                </div>
-                <div class="block_home">
-                    <a href="./pages/about.html">
-                        <p class="btn_home_text">關於</p>  
-                    </a>   
+            </div>
+            <div class="div_right div_big_block">
+                <div class="div_title">
+                    <h2 class="title">違規速查</h2>
+                </div >
+                <div class="div_list">
+                    <ul class="list">
+                        <li class="list_value">
+                            <a href="./pages/driving_license.html">
+                                <img class="icon_list" src="./icons/icon_DL.png" alt="">
+                                <p class="btn_home_text">駕照違規</p>
+                                <img class="icon_list_2" src="./icons/icon_go.png" alt="">  
+                            </a>
+                        </li>
+                        <li class="list_value">
+                            <a href="./pages/car_license.html">
+                                <img class="icon_list" src="./icons/icon_CL.png" alt="">
+                                <p class="btn_home_text">牌照違規</p>
+                                <img class="icon_list_2" src="./icons/icon_go.png" alt="">  
+                            </a> 
+                        </li>
+                        <li class="list_value">
+                            <a href="./pages/about.html">
+                                <img class="icon_list" src="./icons/icon_about.png" alt="">
+                                <p class="btn_home_text">關於</p> 
+                                <img class="icon_list_2" src="./icons/icon_go.png" alt=""> 
+                            </a>  
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
