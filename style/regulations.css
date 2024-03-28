@@ -129,7 +129,7 @@ hr{
     color: #636363;
 }
 
-@media (max-width:670px){
+@media (max-width:575px){
     .div_output{
         position: fixed;
         background-color: blanchedalmond;
