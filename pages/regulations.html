@@ -2,38 +2,158 @@
 <html>
     <head>
         <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-        <title>法規</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>首頁</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../style/general.css"/>
+        <link rel="stylesheet" href="../style/sidebar.css"/>
+        <link rel="stylesheet" href="../style/header.css"/>
         <link rel="stylesheet" href="../style/regulations.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </head>
     <body>
-        <div class="div_header">
-            <img class="btn_menu btn_header" src="../icons/icon_menu.png" alt="選單">
-            <h2 class="page_title">法規</h1>
-            <img class="btn_search btn_header" src="../icons/icon_search.png" alt="選單">
-        </div>
-        <div class="div_main">
-            <div class="div_input">
-                <ul class="list_article">
-                <li class="block_list">
-                    <div class="div_list_article">第 1 條</div>
-                    <div class="div_list_title">立法目的</div>
+        <aside id="sidebar" class="hide_sidebar">
+          <div class="bk_hideSidebar">
+            <label for="btn_hideSidebar" class="space_hideSidebar">
+              <img class="icon_menu icon_hide_menu" src="../icons/icon_menu.png" width="30px" alt="">
+              選單
+            </label>
+            <button id="btn_hideSidebar" class="btn_header btn_menu">
+              <img src="../icons/icon_cross_w.png" width="30px" alt="關閉" >
+            </button>
+          </div>
+          <div class="bk_app_name">
+            <h1 class="app_name">尚無名稱</h1>
+          </div>
+          <div class="bk_app_list">
+            <input type="checkbox" name="check_1" id="check_1" class="check_menu">
+            <div class="bk_menu menu_1">
+              <label class="bk_menu_class" for="check_1">
+                <img class="icon_class" src="../icons/icon_law.png" alt="">
+                <p class="text_class">法規彙整</p>
+                <img class="icon_class_open" src="../icons/icon_go.png" alt="">
+              </label>
+              <ul class="list_menu">
+                <li class="list_menu_value">
+                  <a class="page_link" href="../pages/regulations.html?r=PH">
+                    <img class="icon_menu" src="../icons/icon_policeman_b.png" alt="">
+                    <p class="text_menu">處罰條例</p>
+                  </a>
                 </li>
-                </ul>
-            </div>    
-            <div class="div_output">
-                <div class="div_output_title">
-                    <h2 class="title_article">第 1 條</h2>
-                </div>
-                <div class=div_output_text>
-
-                </div>
+                <li class="list_menu_value">
+                  <a class="page_link" href="../pages/regulations.html?r=SR">
+                    <img class="icon_menu" src="../icons/icon_stop_b.png" alt="">
+                    <p class="text_menu">安全規則</p>
+                  </a>
+                </li>
+                <li class="list_menu_value">
+                  <a class="page_link" href="../pages/regulations.html?r=DR">
+                    <img class="icon_menu" src="../icons/icon_cars_b.png" alt="">
+                    <p class="text_menu">處理細則</p>
+                  </a>
+                </li>
+                <li class="list_menu_value">
+                  <a class="page_link" href="../pages/regulations.html?r=ML">
+                    <img class="icon_menu" src="../icons/icon_street_b.png" alt="">
+                    <p class="text_menu">設置規則</p>
+                  </a>
+                </li>
+              </ul>
             </div>
-        </div>
+            <input type="checkbox" name="check_2" id="check_2" class="check_menu">
+            <div class="bk_menu menu_2">
+              <label class="bk_menu_class" for="check_2">
+                <img class="icon_class" src="../icons/icon_quickSearch.png" alt="">
+                <p class="text_class">違規速查</p>
+                <img class="icon_class_open" src="../icons/icon_go.png" alt="">
+              </label>
+              <ul class="list_menu">
+                <li class="list_menu_value">
+                  <a class="page_link" href="../pages/driving_license.html">
+                    <img class="icon_menu" src="../icons/icon_DL.png" alt="">
+                    <p class="text_menu">駕照違規</p>
+                  </a>
+                </li>
+                <li class="list_menu_value">
+                  <a class="page_link" href="../pages/car_license.html">
+                    <img class="icon_menu" src="../icons/icon_CL.png" alt="">
+                    <p class="text_menu">牌照違規</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <input type="checkbox" name="check_3" id="check_3" class="check_menu">
+            <div class="bk_menu menu_3">
+              <label class="bk_menu_class" for="check_3">
+                <img class="icon_class" src="../icons/icons_file.png" alt="">
+                <p class="text_class">更多</p>
+                <img class="icon_class_open" src="../icons/icon_go.png" alt="">
+              </label>
+              <ul class="list_menu">
+                <li class="list_menu_value">
+                  <a class="page_link" href="../pages/about.html">
+                    <img class="icon_menu" src="../icons/icon_about.png" alt="">
+                    <p class="text_menu">關於</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- <input type="checkbox" id="sidebar_active" name=""> -->
+        </aside>
+        <header class="bK_header">
+          <img class="btn_header btn_menu" src="../icons/icon_menu.png" alt="選單">
+          <div class="bk_header_center">
+            <img class="page_icon" src="../icons/icon_policeman_b.png" alt="" width="40px">
+            <p class="page_title title_long">《道路交通管理處罰條例》</p>
+            <p class="page_title title_short">《處罰條例》</p>
+            <form class="bk_search_area">
+              <input type="text" name="search" id="input_keyword">
+              <!-- <input type="button" name="btn_search_start" id="btn_search_start"> -->
+              <button id="btn_search_start">
+                <img src="../icons/icon_search_2w.png" width="25px" alt="搜尋" >
+              </button>
+            </form>
+          </div>
+          <!-- <div class="bk_space"></div> -->
+          <!-- <div class="bk_header_right"> 
+            <form class="bk_search_area">
+              <input type="text" name="search" id="input_keyword"> -->
+              <!-- <input type="button" name="btn_search_start" id="btn_search_start"> -->
+              <!-- <button id="btn_search_start">
+                <img src="./icons/icons_search_2w.png" width="25px" alt="搜尋" >
+              </button>
+            </form>
+          </div> -->
+          <img class="btn_header btn_search " src="../icons/icon_search.png" alt="搜尋">
+        </header>
+        <main class="bk_main">
+          <div class="bk_left">
+            <div class="bk_left_list">
+              <ul class="list_r">
+                <label class="list_r_lable" for="check_right">
+                <li class="list_r_value">
+                  <div class="bk_r_article">第 1 條</div>
+                  <div class="bk_r_title">立法目的</div>
+                </li>
+                </label>
+              </ul>
+            </div>
+          </div>
+          <input type="checkbox" name="check_right" id="check_right" class="check_right">   
+          <div class="bk_right">
+            <label class="bk_right_header" for="check_right">
+              <div class="bk_right_title">
+                <p class="title_article">第 1 條</p>
+              </div>
+              <div class="bk_toolbar"></div>
+              <img class="btn_right_open" src="../icons/icon_up_b.png" alt="縮放">
+            </label>
+            <div class="bk_right_text"></div>
+          </div>
+        </main>
         <script type='module' src='../script/regulations.js'> </script> 
     </body>
 </html>
