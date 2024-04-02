@@ -1,0 +1,119 @@
+.bK_header{
+    grid-area: header;
+    background-color: rgb(30, 30, 30);
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100%;
+}
+
+.btn_header{
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+    padding: 5px;
+    margin: 0;
+}
+
+.btn_menu{
+    display: none;
+    transition: 0.2s;
+}
+.btn_menu:hover{
+    transform: translateX(10px);
+}
+
+.btn_search{
+    display: none;
+}
+
+.bk_header_center{
+    position: relative;
+    display: flex;
+    height: 40px;
+    align-items: center;
+}
+
+.page_icon{
+    margin-left: 10px;
+}
+
+.page_title{
+    font-size: 25px;
+    color: whitesmoke;
+    line-height: 100%;
+    height: auto;
+    width: auto;
+    margin: 0;
+    /* display: inline-block; */
+}
+.title_short{
+    display: none;
+    text-align: center;
+}
+.title_long{
+    text-align: left;
+}
+
+.bk_search_area{
+    border: 1.5px solid rgb(90, 150, 250);
+    height: 25px;
+    border-radius: 10px;
+    padding: 0 10px;
+    width: 250px;
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    top: 7.5px;
+}
+
+#input_keyword{
+    background-color:transparent;
+    vertical-align: middle;
+    border: none;
+    /* border-right: 1.5px red solid;; */
+    outline : none;
+    height: 15px;
+    width: 200px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0;
+}
+
+#btn_search_start{
+    background-color:transparent;
+    vertical-align: middle;
+    border:none;
+    border-left: 1.5px solid rgb(90, 150, 250);
+    height: 25px;
+    width: 25px;
+    padding-left: 15px;
+}
+
+
+@media (max-width:1024px) {
+    .bK_header{
+        grid-template-columns: 40px 1fr;
+    }
+    .btn_menu{
+        display: inline-block;
+    } 
+}
+
+@media (max-width:768px) {
+    .bK_header{
+        grid-template-columns: 40px 1fr 40px;
+    }
+    .title_long{
+        display: none;
+    }
+    .title_short{
+        display: inline-block;
+    }
+    .btn_search{
+        display: inline-block;
+    }
+    .bk_search_area{
+        z-index: -1;
+    }
+}
