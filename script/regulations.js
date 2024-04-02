@@ -80,9 +80,12 @@ let html = '';
 r_list.forEach((value) => {
     html = html + `
     <li class="list_r_value" data-article="${value.article}">
-        <div class="bk_r_article">第 ${value.article} 條</div>
-        <div class="bk_r_title">${value.title}</div>
+        <label class="list_r_lable" for="check_right">
+            <div class="bk_r_article">第 ${value.article} 條</div>
+            <div class="bk_r_title">${value.title}</div>
+        </label>
     </li>
+    
     `;
 });
 $('.list_r').html(html);
@@ -103,8 +106,6 @@ $('.btn_menu').click(()=>{
 $('.list_r_value').each((index, value)=>{
     const article = value.dataset.article;
     $(value).on('click',()=>{
-        //！！無法實現想要的效果！！
-        $('#check_right').attr('checked',true);
         get_text(article);
         save_to_brower(r_name, article);
     })
