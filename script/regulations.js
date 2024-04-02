@@ -40,24 +40,28 @@ function get_regulation(r_name){
     let r_list;
     if (r_name == 'PH'){
         r_list = list_PH;
+        $('title').html(r_PH.name_title);
         $('.title_short').html(r_PH.name_short);
         $('.title_long').html(r_PH.name_all);
         $('.page_icon').attr('src', r_PH.icon_src)
     }
     else if (r_name == 'SR'){
         r_list = list_SR;
+        $('title').html(r_SR.name_title);
         $('.title_short').html(r_SR.name_short);
         $('.title_long').html(r_SR.name_all);
         $('.page_icon').attr('src', r_SR.icon_src)
     }
     else if (r_name == 'DR'){
         r_list = list_DR;
+        $('title').html(r_DR.name_title);
         $('.title_short').html(r_DR.name_short);
         $('.title_long').html(r_DR.name_all);
         $('.page_icon').attr('src', r_DR.icon_src)
     }
     else if (r_name == 'ML'){
         r_list = list_ML;
+        $('title').html(r_ML.name_title);
         $('.title_short').html(r_ML.name_short);
         $('.title_long').html(r_ML.name_all);
         $('.page_icon').attr('src', r_ML.icon_src)
