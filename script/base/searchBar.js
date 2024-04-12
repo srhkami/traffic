@@ -10,7 +10,7 @@ export const html_searchBar =`
   <img class="icon_menu" src="../icons/icon_cross_w.png" alt="關閉" >
   </button>
   </div>
-  <form class="form_search" action="../htmls/search.html" method="get">
+  <form class="form_search" action="../pages/search.html" method="get">
   <div class="search_input">
   <input type="text" name="keyword" id="input_keyword" placeholder="請輸入關鍵字" autocomplete="off" required="required" maxlength= "8";>
   <label for="btn_search_reset" class="icon_search_label">
