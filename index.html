@@ -2,89 +2,64 @@
 <html>
     <head>
         <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title>首頁</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./style/general.css"/>
-        <link rel="stylesheet" href="./style/index.css"/>    
+        <link rel="stylesheet" href="./style/base/general.css"/>
+        <link rel="stylesheet" href="./style/base/sidebar.css"/>
+        <link rel="stylesheet" href="./style/base/searchBar.css"/>
+        <link rel="stylesheet" href="./style/base/header.css"/>
+        <link rel="stylesheet" href="./style/page/index.css"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script type='module' src='./script/page/index.js'> </script>
+        <script type='module' src="./script/base/info.js"></script>
+        <script type='module' src='./script/base/sidebar.js'></script>
+        <script type='module' src='./script/base/searchBar.js'></script>
+        <script type='module' src='./script/base/quickEnter.js'></script>
     </head>
     <body>
-        <div class="div_header">
-            <img class="btn_menu btn_header" src="./icons/icon_menu.png" alt="選單">
-            <h2 class="page_title">首頁</h1>
-            <img class="btn_search btn_header" src="./icons/icon_search.png" alt="選單">
+      <aside id="sidebar" class="hide_sidebar"></aside>
+      <header class="bK_header">
+        <img class="btn_header btn_menu" src="./icons/icon_menu.png" alt="選單">
+        <div class="bk_header_center">
+          <img class="page_icon" src="./icons/icon_home_b.png" alt="">
+          <p class="page_title title_long">首頁</p>
+          <p class="page_title title_short">交通鴿手 </p>
         </div>
-        <div class="div_main">
-            <div class="div_left div_big_block">
-                <div class="div_title">
-                    <h2 class="title">法規彙整</h2>
-                </div >
-                <div class="div_list">
-                    <ul class="list">
-                        <li class="list_value">
-                            <a href="./pages/regulations.html?r=PH">
-                                <img class="icon_list" src="./icons/icon_law.png" alt="">
-                                <p class="btn_home_text ">處罰條例</p> 
-                                <img class="icon_list_2" src="./icons/icon_go.png" alt="">
-                            </a>   
-                        </li>
-                        <li class="list_value">
-                            <a href="./pages/regulations.html?r=SR">
-                                <img class="icon_list" src="./icons/icon_law.png" alt="">
-                                <p class="btn_home_text">安全規則</p>  
-                                <img class="icon_list_2" src="./icons/icon_go.png" alt="">
-                            </a>
-                        </li>
-                        <li class="list_value">
-                            <a href="./pages/regulations.html?r=DR">
-                                <img class="icon_list" src="./icons/icon_law.png" alt="">
-                                <p class="btn_home_text">處理細則</p>  
-                                <img class="icon_list_2" src="./icons/icon_go.png" alt="">
-                            </a> 
-                        </li>
-                        <li class="list_value">
-                            <a href="./pages/regulations.html?r=ML">
-                                <img class="icon_list" src="./icons/icon_law.png" alt="">
-                                <p class="btn_home_text">設置規則</p>  
-                                <img class="icon_list_2" src="./icons/icon_go.png" alt="">
-                            </a>   
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="div_right div_big_block">
-                <div class="div_title">
-                    <h2 class="title">違規速查</h2>
-                </div >
-                <div class="div_list">
-                    <ul class="list">
-                        <li class="list_value">
-                            <a href="./pages/driving_license.html">
-                                <img class="icon_list" src="./icons/icon_DL.png" alt="">
-                                <p class="btn_home_text">駕照違規</p>
-                                <img class="icon_list_2" src="./icons/icon_go.png" alt="">  
-                            </a>
-                        </li>
-                        <li class="list_value">
-                            <a href="./pages/car_license.html">
-                                <img class="icon_list" src="./icons/icon_CL.png" alt="">
-                                <p class="btn_home_text">牌照違規</p>
-                                <img class="icon_list_2" src="./icons/icon_go.png" alt="">  
-                            </a> 
-                        </li>
-                        <li class="list_value">
-                            <a href="./pages/about.html">
-                                <img class="icon_list" src="./icons/icon_about.png" alt="">
-                                <p class="btn_home_text">關於</p> 
-                                <img class="icon_list_2" src="./icons/icon_go.png" alt=""> 
-                            </a>  
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <img class="btn_header btn_search " src="./icons/icon_search.png" alt="搜尋">
+      </header>
+      <aside id="searchBar"></aside>
+      <main class="bk_main">
+        <div class="bk_about" id="about_1">
+          <p class="about_title">快速導航</p>
+          <button id="quick_setting">
+            <img id="icon_quick" src="./icons/icon_setting_b.png" alt="">
+          </button>
+          <div id="quickBar"></div>
+          <hr>
+          <div id="bk_quick"></div>
         </div>
+        <div class="bk_about" id="about_3">
+          <p class="about_title">已知問題與未來展望</p>
+          <hr>
+          <p class="about_text" id="future"></p>
+        </div>
+        <div class="bk_about" id="about_2">
+          <p class="about_title">到案日期計算機</p>
+          <hr>
+          <div class="bk_date">
+            <p class="about_text date_text" id="day_30"></p>
+            <hr class="br_date">
+            <p class="about_text date_text" id="day_45"></p>
+          </div>
+        </div>
+        <div class="bk_about" id="about_4">
+          <p class="about_title">公告</p>
+          <hr>
+          <p class="about_text" id="notice"></p>
+        </div>
+      </main>
     </body>
 </html>

@@ -10,39 +10,29 @@
         <link rel="stylesheet" href="../style/base/general.css"/>
         <link rel="stylesheet" href="../style/base/sidebar.css"/>
         <link rel="stylesheet" href="../style/base/header.css"/>
-        <link rel="stylesheet" href="../style/base/searchBar.css"/>
-        <link rel="stylesheet" href="../style/page/regulations.css"/>
+        <link rel="stylesheet" href="../style/page/search.css"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script type='module' src='../script/page/regulations.js'> </script>
+        <script type='module' src='../script/page/search.js'> </script>
         <script type='module' src='../script/base/sidebar.js'> </script>
         <script type='module' src='../script/base/searchBar.js'> </script>
     </head>
     <body>
-        <aside id="sidebar" class="hide_sidebar"></aside>
+        <aside id="sidebar" class="hide_sidebar">
+        </aside>
         <header class="bK_header">
           <img class="btn_header btn_menu" src="../icons/icon_menu.png" alt="選單">
           <div class="bk_header_center">
-            <img class="page_icon" src="../icons/icon_policeman_b.png" alt="">
-            <p class="page_title title_long">《道路交通管理處罰條例》</p>
-            <p class="page_title title_short">《處罰條例》</p>
-          </div>
-          <img class="btn_header btn_search " src="../icons/icon_search.png" alt="搜尋">
+            <img class="page_icon" src="../icons/icon_search_2b.png" alt="">
+            <p class="page_title title_long">搜尋</p>
+            <p class="page_title title_short">搜尋</p>
+          </div>     
+          <img class="btn_header btn_search " src="../icons/icon_search_2w.png" alt="搜尋">
         </header>
-        <aside id="searchBar"></aside>
         <main class="bk_main">
           <div class="bk_left">
-            <div class="bk_left_list">
-              <ul class="list_r">
-                <li class="list_r_value">
-                  <label class="list_r_lable" for="check_right">
-                    <div class="bk_r_article">第 1 條</div>
-                    <div class="bk_r_title">立法目的</div>
-                  </label>
-                </li>
-              </ul>
-            </div>
+            <aside id="searchBar"></aside>
           </div>
-          <input type="checkbox" name="check_right" id="check_right" class="check_right">   
+          <input type="checkbox" name="check_right" id="check_right" class="check_right" checked="checked">   
           <div class="bk_right">
             <label class="bk_right_header" for="check_right">
               <div class="bk_right_title">
@@ -51,7 +41,9 @@
               <div class="bk_toolbar"></div>
               <img class="btn_right_open" src="../icons/icon_up_b.png" alt="縮放">
             </label>
-            <div class="bk_right_text"></div>
+            <div class="bk_right_text">
+              <p class="line-0000 show-number">這是測試這一行<i class="highlight">裡面夾了P標籤</i> 測試第一行</p>
+            </div>
           </div>
         </main>
     </body>
