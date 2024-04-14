@@ -37,7 +37,7 @@ const updata_text =`
     </p>
     <p>
     ※　1.01：
-    <br>使用Bootstrap5程式碼逐步汰換。
+    <br>使用Bootstrap5逐步汰程式碼。
     <br>加入自訂快速導航功能。
     </p>
 `;
