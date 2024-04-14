@@ -36,20 +36,20 @@ function search_start(drive_type, car_type, bike_type, more_type){
 
 // 主程式開始
     // 查詢按鈕判斷
-$('#bt_ok').on('click',()=>{
-    const drive_type = Number($('#drive_type').val());
-    const car_type = Number($('#car_type').val());
-    const bike_type = Number($('#bike_type').val());
-    const more_type = Number($('#more_type').val());
-    console.log(drive_type);
-    console.log(car_type);
-    console.log(bike_type);
-    console.log(more_type);
-    if (drive_type==0 || car_type==0 || bike_type==0){
-        alert('選項請勿留空！');
-    }
-    else{
-        $('.tip').html('　'); 
-        search_start(drive_type, car_type, bike_type, more_type);
-    };
-});
+    $('#bt_ok').on('click',()=>{
+        const drive_type = Number($('#drive_type').val());
+        const car_type = Number($('#car_type').val());
+        const bike_type = Number($('#bike_type').val());
+        const more_type = Number($('#more_type').val());
+        console.log(drive_type);
+        console.log(car_type);
+        console.log(bike_type);
+        console.log(more_type);
+        if (drive_type==0 || car_type==0 || bike_type==0){
+            alert('選項請勿留空！');
+        }
+        else{
+            $('.tip').html('　'); 
+            search_start(drive_type, car_type, bike_type, more_type);
+        };
+    });

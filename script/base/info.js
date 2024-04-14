@@ -1,7 +1,7 @@
 import {pages} from './pages.js';
 
 // 版本號(大版本.小版本.日+時)
-const app_ver =`1.01.1423 (Beta)`;
+const app_ver =`1.02.1500 (Beta)`;
 
 // 公告
 const notice =`
@@ -36,7 +36,7 @@ const updata_text =`
     <br>加入「法規」頁面及「搜尋」功能。   
     </p>
     <p>
-    ※　1.01：
+    ※　1.02：
     <br>使用Bootstrap5逐步汰程式碼。
     <br>加入自訂快速導航功能。
     </p>

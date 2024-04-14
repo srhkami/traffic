@@ -39,12 +39,14 @@ function load_quick(){
   let html = '';
   quick_options.forEach((name, index)=>{
       html +=`
-      <a href=".${pages[name].href}" id="quick_${index}">
-        <img src=".${pages[name].icon}" alt="${pages[name].name_short}" data-name="${pages[name].name_simple}" class="img_set">
-      </a>
+      <div class="col-3 quick_col" data-name="PH">
+        <a href=".${pages[name].href}">
+            <img class="img-fluid mx-auto" src=".${pages[name].icon}" alt="${pages[name].name_short}" data-name="${pages[name].name_simple}">
+        </a>
+      </div>
       `;
   })
-  $('#bk_quick').html(html);
+  $('#bk_quick>div').html(html);
 }
 
 function set_quick(){
