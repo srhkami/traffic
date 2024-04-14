@@ -11,8 +11,9 @@
     height: 30px;
     width: 30px;
     vertical-align: middle;
-    padding: 5px;
-    margin: 0;
+    /* padding: 5px; */
+    margin: 5px 0;
+    cursor: pointer;
 }
 
 .btn_menu{

@@ -82,16 +82,7 @@ export const html_searchBar =`
   </div>
   </div>
 `;
-  //讀取瀏覽器設定，刷新搜尋欄
-export function load_searchBar(html_searchBar) {
-  if ($('.page_title').html() == '首頁'){
-    $('#searchBar').html(html_searchBar.replaceAll('..','.'));
-  }
-  else{
-    $('#searchBar').html(html_searchBar);
-  }
-  
-}
+
   //函式：開合搜尋側邊攔
 export function searchBar_switch(){
   $('.btn_search').on('click',() => {
@@ -135,14 +126,9 @@ export function load_options(){
   }
 }
   
-//函式：搜尋時，儲存歷史紀錄
-export function save_history(){
-  
-}
-
-load_searchBar(html_searchBar);
+$('#searchBar').html(html_searchBar);
 $(document).ready(()=>{
-  searchBar_switch();
+  // searchBar_switch();
   save_options();
   load_options();
 });

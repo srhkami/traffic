@@ -12,12 +12,15 @@ export const html_sidebar = `
     <img class="icon_menu" src="../icons/icon_cross_w.png" alt="關閉" >
     </button>
     </div>
-    <div class="bk_app_name">
+
+    <div class="card bg-transparent bk_app_name">
     <a class="index_link" href="../index.html">
-    <img class="icon_app" src="../icons/icon_trafficpigeon.png">
+    <img class="" src="../icons/icon_trafficpigeon_big.png">
     <h1 class="app_name">交通鴿手</h1>
     </a>
     </div>
+
+
     <div class="bk_app_list">
     <input type="checkbox" name="check_1" id="check_1" class="check_menu">
     <div class="bk_menu menu_1">

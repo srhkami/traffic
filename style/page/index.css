@@ -51,13 +51,12 @@
 
 #quick_setting, #quick_setting>img{
     position: absolute;
-    top: 10px;
+    top: 5px;
     right: 5px;
     width: 30px;
     height: 30px;
     background-color: transparent;
     border: none;
-    display: none;
 }
 
 #bk_quick{

@@ -59,11 +59,8 @@ a, a:link, a:visited, a:hover{
     justify-content: center;
     vertical-align: middle;
 }
-
-.icon_app{
-    height: 80px;
-    width: 80px; 
-    padding: 0 85px;
+.index_link img{
+    padding: 0 86px;
 }
 
 .app_name{
