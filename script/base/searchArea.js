@@ -45,7 +45,7 @@ export const html_searchArea =`
   </div>
   <div class="form-check form-switch">
     <input class="form-check-input" type="checkbox" role="switch" name="searchSwitch" id="switch_${pages.PA.name_simple}" value="${pages.PA.name_simple}">
-    <label class="form-check-label" for="switch_${pages.PA.name_simple}">${pages.PA.name_title}</label>PA
+    <label class="form-check-label" for="switch_${pages.PA.name_simple}">${pages.PA.name_title}</label>
   </div>
   <div class="form-check form-switch">
     <input class="form-check-input" type="checkbox" role="switch" name="searchSwitch" id="switch_${pages.PW.name_simple}" value="${pages.PW.name_simple}">
