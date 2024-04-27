@@ -1,7 +1,7 @@
 import {pages} from './pages.js';
 
 // 版本號(大版本.小版本.日+時)
-const app_ver =`1.10.2623 (Beta)`;
+const app_ver =`1.10.2710 (Beta)`;
 
 // 公告
 const notice =`
@@ -19,6 +19,7 @@ const future =`
         已知問題：
     <br>◎ 視窗高度過窄時會跑版
     <br>◎ 部分按鈕目前尚未加入功能
+    <br>◎ 手機板下滑會跟重新整理操作產生衝突
     <br>
     <br>預計加入的功能：
     <br>◎　書籤功能
