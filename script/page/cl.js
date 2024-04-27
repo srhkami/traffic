@@ -49,7 +49,7 @@ function is_same_judge(){
 
 //函式：搜尋按鈕監聽器
 function ok_click(){
-    $('#bt_ok').on('click',()=>{
+    $('#btn_ok').on('click',()=>{
         const a_type = Number($('#a_type').val());
         const b_type = Number($('#b_type').val());
         const is_same = Number($('#is_same').val());

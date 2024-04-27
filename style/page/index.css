@@ -1,122 +1,43 @@
-.bk_main{
+
+#mainContent{
+    display: flex;
+    flex-direction: column;
+    grid-template-columns:1fr;
+    grid-template-rows: repeat(24, 55px);
+}
+#about_1{
+    position: relative;
+    height: auto;
+}
+@media (min-width:768px){
+    #mainContent{
     display: grid;
     grid-template-columns:1fr 1fr;
     grid-template-rows: repeat(12, 1fr);
-    /* padding-top: 70px; */
-    /* background-color: rgb(255, 158, 158); */
     overflow: auto;
-}
-
-@media (max-width:1024px){
-    body{
-        grid-template-columns: 5px 1fr 5px;
     }
-    /* .bk_main{
-        grid-template-columns:1fr 1fr;
-    } */
-    .bK_header{
-        grid-template-columns: 40px 1fr 40px;
+    #about_1{
+        grid-row: span 4;
+        order: 1;
     }
-}
-
-@media (max-width:768px){
-    .bk_main{
-        grid-template-columns:1fr;
-        grid-template-rows: repeat(24, 55px);
+    #about_2{
+        grid-row: span 3;
+        order: 2;
+    }
+    #about_3{
+        grid-row: span 8;
+        order: 4;
+    }
+    #about_4{
+        grid-row: span 9;
+        order: 3;
     }
 }
 
-.bk_about{
-    border-radius: 10px;
-    background-color: MintCream;
-    margin: 10px 20px;
-}
-#about_1{
-    grid-row: span 4;
-    order: 1;
-    position: relative; 
-}
-#about_2{
-    grid-row: span 3;
-    order: 2;
-}
-#about_3{
-    grid-row: span 8;
-    order: 4;
-}
-#about_4{
-    grid-row: span 9;
-    order: 3;
-}
-
-#quick_setting, #quick_setting>img{
+#btn_quick_setting, #btn_quick_setting>img{
     position: absolute;
     top: 5px;
     right: 5px;
     width: 30px;
     height: 30px;
-    background-color: transparent;
-    border: none;
 }
-
-.quick_col > a{
-    display: flex;
-}
-.quick_col a img{
-    margin-top: 15px;
-    justify-content: center;
-    /* width: 75px; */
-}
-.quick_col > a >img:hover{
-    border: 4px solid rgb(90, 150, 250);
-    border-radius: 10px;
-}
-
-.img_set{
-    cursor: pointer;
-}
-
-.bk_date{
-    display: grid;
-    grid-template-columns: 1fr 10px 1fr;
-}
-
-.quickBar{
-    display: flex;
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    background-color: red;
-}
-
-
-.about_title{
-    color: rgb(90, 150, 250);
-    font-size: 20px;
-    font-weight: 600;
-    text-align: center;
-}
-
-#updata_text{
-    text-align: left;
-    font-size: 14px;
-    margin-left: 3em;
-    text-indent: -2em;
-}
-
-.about_text{
-    color: dimGray;
-    font-size: 20px;
-    font-weight: 800;
-    margin: 1em 2em;
-    text-align: left;
-}
-
-.date_text{
-    font-size: 20px;
-    margin: 0;
-    text-align: center;
-}
-
-
-

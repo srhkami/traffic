@@ -1,45 +1,26 @@
-html{
-    height: 100%;
-    background-color: rgb(30, 30, 30);
-    /* padding-right: 10px; */
-    box-sizing: border-box;
-}
 
-body{ 
-    background-color: rgb(30, 30, 30);
-    height: 100%;
-    margin: 0; 
-    padding: 0;
+body{
     font-family: "Noto Sans TC", sans-serif;
     font-optical-sizing: auto;
-    font-size: 14px;
     -ms-overflow-style: none;
-    display: grid;
-    grid-template-columns: 250px 1fr 5px;
-    grid-template-rows: 40px calc(100% - 40px);;
-    grid-template-areas: 
-        "sidebar header search"
-        "sidebar main search" 
-    ;
+    display: flex;
+    flex-direction: column; 
+    overscroll-behavior-y: contain;
+    line-height: initial !important;
 }
-body::-webkit-scrollbar {
-    display: none;
-}
-@media (max-width:1024px) {
-    body{
-        grid-template-columns: 5px 1fr 5px;
-    }
-}
-
 main{
-    background-color: rgb(30, 30, 30);
+    height: calc(100% - 60px);
 }
-
-button{
-    cursor: pointer;
+.icon_menu{
+    height: 25px;
 }
-
-select{
-    cursor: pointer;
+nav{
+    position: fixed;
 }
-
+#picArea{
+    background-color: aqua;
+    position: absolute;
+    height: 300px;
+    z-index: 10;
+    
+}

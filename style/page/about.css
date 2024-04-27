@@ -1,51 +1,34 @@
-
-.bk_main{
+/* 主排版 */
+#mainContent{
     display: grid;
-    grid-template-columns:1fr 1fr 1fr;
-    overflow: auto;
+    grid-template-columns:1fr;
 }
-
-@media (max-width:1230px){
-    .bk_main{
+@media (min-width:768px){
+    #mainContent{
         grid-template-columns:1fr 1fr;
     }
 }
-
-@media (max-width:820px){
-    .bk_main{
-        grid-template-columns:1fr;
+@media (min-width:992px){
+    #mainContent{
+        grid-template-columns:1fr 1fr 1fr;
     }
 }
 
-.bk_left{
-    flex: 1;
+/* 次排版 */
+#bk_left{
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
 }
-.bk_center{
-    flex: 1;
+#bk_center{
     display: grid;
     grid-template-rows: 1fr 2fr;
 }
-.bk_right{
-    flex: 1;
+#bk_right{
     display: grid;
     grid-template-rows: 1;
 }
 
-.bk_about{
-    border-radius: 10px;
-    background-color: MintCream;
-    margin: 10px 20px;
-}
-
-.about_title{
-    color: rgb(90, 150, 250);
-    font-size: 20px;
-    font-weight: 600;
-    text-align: center;
-}
-
+/* 字型個別設定 */
 #updata_text{
     margin-left: 3em;
     text-indent: -2em;
@@ -55,16 +38,7 @@
     font-size: 14px;
 }
 
-.about_text{
-    color: dimGray;
-    font-size: 20px;
-    font-weight: 800;
-    text-align: center;
-}
-
-
 .collection_text{
-    color: dimGray;
     text-align: left;
     font-size: 14px;
     font-weight: 800;

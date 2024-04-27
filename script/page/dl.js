@@ -7,36 +7,36 @@ function search_start(drive_type, car_type, bike_type, more_type){
     x = x + (car_type-1)*6;
     x = x + bike_type;
     const code = violation_code[x-1];
-    $('.output_text_big').html(violation_text[code]);
+    $('#output_text_first').html(violation_text[code]);
     if (more_type == 0) {
-        $('.output_title').html(violation_list[code]);
+        $('#output_title').html(violation_list[code]);
     }
         else{
-        $('.output_title').html(violation_again_list[code]);
+        $('#output_title').html(violation_again_list[code]);
     }
     if (drive_type == 8 && code == 15){
         alert('曳引車無明文處罰規定，僅供參考'); 
     }
     if (code == 0 || code == 16) {
-        $('.output_text_small').html('　');
+        $('#output_text_second').html('　');
     }
     else if (code >=1 && code <=4 || code == 15){
-        $('.output_text_small').html('駕駛人處新臺幣六千元以上二萬四千元以下罰鍰，並當場禁止其駕駛。');
+        $('#output_text_second').html('駕駛人處新臺幣六千元以上二萬四千元以下罰鍰，並當場禁止其駕駛。');
     }
     else if (code >= 5 && code <= 10){
-        $('.output_text_small').html('汽車所有人及駕駛人各處新臺幣四萬元以上八萬元以下罰鍰，並當場禁止其駕駛。');
+        $('#output_text_second').html('汽車所有人及駕駛人各處新臺幣四萬元以上八萬元以下罰鍰，並當場禁止其駕駛。');
     }
     else if (code >= 11 && code <= 13) {
-        $('.output_text_small').html('駕駛人處新臺幣一千八百元以上三千六百元以下罰鍰，並禁止其駕駛。');
+        $('#output_text_second').html('駕駛人處新臺幣一千八百元以上三千六百元以下罰鍰，並禁止其駕駛。');
     }
     else {
-        $('.output_text_small').html('駕駛人處新臺幣六千元罰鍰，並禁止其駕駛。');
+        $('#output_text_second').html('駕駛人處新臺幣六千元罰鍰，並禁止其駕駛。');
     }
 };
 
 // 主程式開始
     // 查詢按鈕判斷
-    $('#bt_ok').on('click',()=>{
+    $('#btn_ok').on('click',()=>{
         const drive_type = Number($('#drive_type').val());
         const car_type = Number($('#car_type').val());
         const bike_type = Number($('#bike_type').val());

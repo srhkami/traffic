@@ -1,15 +1,14 @@
 import {pages} from './pages.js';
 
 // 版本號(大版本.小版本.日+時)
-const app_ver =`1.02.1615 (Beta)`;
+const app_ver =`1.10.2623 (Beta)`;
 
 // 公告
 const notice =`
-    113/04/14更新內容： 
-    <br> 「快速導航」功能現已提供自訂選項！
+    113 / 04 / 27 更新內容： 
+    <br>◎ 全新介面與亮/暗主題
+    <br>◎ 加入「舉發違規要點」頁面
     <br>
-    <br>感謝各位學長姐使用！
-    <br>此程式仍有許多不足，
     <br>若有任何問題或寶貴意見，
     <br>歡迎使用選單中「更多→意見回饋」，
     <br>亦徵求有志之士一同參與製作！
@@ -19,6 +18,7 @@ const notice =`
 const future =`
         已知問題：
     <br>◎ 視窗高度過窄時會跑版
+    <br>◎ 部分按鈕目前尚未加入功能
     <br>
     <br>預計加入的功能：
     <br>◎　書籤功能
@@ -37,34 +37,34 @@ const updata_text =`
     </p>
     <p>
     ※　1.02：
-    <br>使用Bootstrap5逐步汰程式碼。
+    <br>使用Bootstrap5逐步汰換舊版介面。
     <br>加入自訂快速導航功能。
+    </p>
+    <p>
+    ※　1.1：
+    <br>啟用更多Bootstrap5.3新介面。
+    <br>增加淺/深色模式切換功能
+    <br>加入「違規舉發要點」頁面。
+    <br>加入更多法規。
     </p>
 `;
 
 // 收錄法規
 const collection =`
-    <p class="collection_text">◎${pages.PH.name_all}
-    <br>修訂日期：${pages.PH.revision}
-    <br>程式簡稱：${pages.PH.name_short}</p>
-    <p class="collection_text">◎${pages.SR.name_all}
-    <br>修訂日期：${pages.SR.revision}
-    <br>程式簡稱：${pages.SR.name_short}</p>
-    <p class="collection_text">◎${pages.DR.name_all}
-    <br>修訂日期：${pages.DR.revision}
-    <br>程式簡稱：${pages.DR.name_short}</p>
-    <p class="collection_text">◎${pages.ML.name_all}
-    <br>修訂日期：${pages.ML.revision}
-    <br>程式簡稱：${pages.ML.name_short}</p>
-    <p class="collection_text">◎${pages.TA.name_all}
-    <br>修訂日期：${pages.TA.revision}
-    <br>程式簡稱：${pages.TA.name_short}</p>
-    <p class="collection_text">◎${pages.PA.name_all}
-    <br>修訂日期：${pages.PA.revision}
-    <br>程式簡稱：${pages.PA.name_short}</p>
-    <p class="collection_text">◎${pages.PW.name_all}
-    <br>修訂日期：${pages.PW.revision}
-    <br>程式簡稱：${pages.PW.name_short}</p>
+    <p class="collection_text">◎　${pages.PH.name_all}
+    <br>　　修訂日期：${pages.PH.revision}
+    <p class="collection_text">◎　${pages.SR.name_all}
+    <br>　　修訂日期：${pages.SR.revision}
+    <p class="collection_text">◎　${pages.DR.name_all}
+    <br>　　修訂日期：${pages.DR.revision}
+    <p class="collection_text">◎　${pages.ML.name_all}
+    <br>　　修訂日期：${pages.ML.revision}
+    <p class="collection_text">◎　${pages.TA.name_all}
+    <br>　　修訂日期：${pages.TA.revision}
+    <p class="collection_text">◎　${pages.PA.name_all}
+    <br>　　修訂日期：${pages.PA.revision}
+    <p class="collection_text">◎　${pages.PW.name_all}
+    <br>　　修訂日期：${pages.PW.revision}
 `;
 
 // 刷新首頁

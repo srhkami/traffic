@@ -1,136 +1,72 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>首頁</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="./style/base/general.css"/>
-        <link rel="stylesheet" href="./style/base/sidebar.css"/>
-        <link rel="stylesheet" href="./style/base/searchBar.css"/>
-        <link rel="stylesheet" href="./style/base/header.css"/>
-        <link rel="stylesheet" href="./style/page/index.css"/>
-        <script type='module' src='./script/page/index.js'> </script>
-        <script type='module' src="./script/base/info.js"></script>
-        <script type='module' src='./script/base/sidebar.js'></script>
-        <script type='module' src='./script/base/searchArea.js'></script>
-        <script type='module' src='./script/base/quickEnter.js'></script>
-    </head>
-    <body>
-      <aside id="sidebar" class="hide_sidebar"></aside>
-      <header class="bK_header">
-        <img class="btn_header btn_menu" src="./icons/icon_menu.png" alt="選單">
-        <div class="bk_header_center">
-          <img class="page_icon" src="./icons/icon_home_b.png" alt="">
-          <p class="page_title title_long">首頁</p>
-          <p class="page_title title_short">交通鴿手</p>
+<html class="h-100" data-bs-theme="light">
+
+<head>
+  <script src="./script/base/jquery-3.7.1.min.js"></script>
+  <script src='./script/base/theme.js'></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>首頁 - 交通鴿手</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+  <link href="./style/base/bootstrap.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <!-- 設定檔 -->
+  <link rel="stylesheet" href="./style/base/general.css" />
+  <link rel="stylesheet" href="./style/page/index.css" />
+  <script type='module' src='./script/base/header.js'> </script>
+  <script type='module' src='./script/base/quickEnter.js'></script>
+  <script type='module' src='./script/base/searchArea.js'></script>
+  <script type='module' src='./script/page/index.js'> </script>
+  <script type='module' src="./script/base/info.js"></script>
+</head>
+
+<body class="h-100">
+  <nav id="pageHeader" class="navbar navbar-expand-md bg-body-tertiary"></nav>
+  <main class="container">
+    <div id="mainContent" class="col-12 h-100 overflow-auto px-3 py-3">
+      <div id="about_1" class="border border-3 mx-3 my-2 pb-3 rounded-3">
+        <h4 class="text-center my-2 text-primary fw-bolder">快速導航</h4>
+        <!-- 快速導航之按鈕 -->
+        <button type="button" id="btn_quick_setting" class="bg-transparent border-0" data-bs-toggle="modal"
+          data-bs-target="#quickSetting">
+          <img id="icon_quick" src="./icons/icon_setting.png" alt="">
+        </button>
+        <!-- 快速設定之彈出視窗 -->
+        <div id="quickSetting" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         </div>
-        <img class="btn_header btn_search " src="./icons/icon_search.png" alt="搜尋" data-bs-toggle="modal" data-bs-target="#searchArea">
-        <!-- 搜尋之彈出視窗 -->
-        <div class="modal fade" id="searchArea" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
-      </header>
-      <aside id="searchBar"></aside>
-      <main class="bk_main">
-        <div class="bk_about" id="about_1">
-          <p class="about_title my-2">快速導航</p>
-          <button type="button"  id="quick_setting"  data-bs-toggle="modal" data-bs-target="#quickSetting">
-            <img id="icon_quick" src="./icons/icon_setting_b.png" alt="">
-          </button>
-          <!-- 快速設定之彈出視窗 -->
-          <div class="modal fade" id="quickSetting" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content bg-light">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">快速導航設定</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container">
-                            <div class="row row-cols-2">
-                                <div class="col">
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" name="quickSwitch" id="quickSwitch_PH" value="PH">
-                                        <label class="form-check-label" for="quickSwitch_PH">處罰條例</label>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" name="quickSwitch" id="quickSwitch_SR" value="SR">
-                                        <label class="form-check-label" for="quickSwitch_SR">安全規則</label>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" name="quickSwitch" id="quickSwitch_DR" value="DR">
-                                        <label class="form-check-label" for="quickSwitch_DR">處理細則</label>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" name="quickSwitch" id="quickSwitch_ML" value="ML">
-                                        <label class="form-check-label" for="quickSwitch_ML">設置規則</label>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" name="quickSwitch" id="quickSwitch_TA" value="TA">
-                                        <label class="form-check-label" for="quickSwitch_TA">事故辦法</label>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" name="quickSwitch" id="quickSwitch_DL" value="DL">
-                                        <label class="form-check-label" for="quickSwitch_DL">駕照違規</label>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" name="quickSwitch" id="quickSwitch_CL" value="CL">
-                                        <label class="form-check-label" for="quickSwitch_CL">牌照違規</label>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" name="quickSwitch" id="quickSwitch_PA" value="PA">
-                                        <label class="form-check-label" for="quickSwitch_PA">警職法</label>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" name="quickSwitch" id="quickSwitch_PW" value="PW">
-                                        <label class="form-check-label" for="quickSwitch_PW">警械條例</label>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" name="quickSwitch" id="quickSwitch_search" value="search">
-                                        <label class="form-check-label" for="quickSwitch_search">搜尋</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <p>自訂快速導航功能，最多能選四個選項</p>
-                        <button type="button" class="btn btn-primary" id="save_quick">儲存</button>
-                    </div>
-                </div>
-            </div>
+        <hr class="border-2">
+        <div class="container">
+          <div id="quickArea" class="row justify-content-around px-0"></div>
+        </div>
+      </div>
+      <div id="about_2" class="border border-3 mx-3 my-2 rounded-3">
+        <h4 class="text-center my-2 text-primary fw-bolder">到案日期計算機</h4>
+        <hr class="border-2">
+        <div class="row g-0">
+          <div class="col-6">
+            <p class="text-body fs-6 fw-semibold text-center border-end" id="day_30"></p>
           </div>
-          <div id="quickBar"></div>
-          <hr>
-          <div id="bk_quick" class="container;">
-            <div class="row justify-content-around px-0" ></div>
+          <div class="col-6">
+            <p class="text-body fs-6 fw-semibold text-center border-start" id="day_45"></p>
           </div>
         </div>
-        <div class="bk_about" id="about_3">
-          <p class="about_title my-2">已知問題與未來展望</p>
-          <hr>
-          <p class="about_text" id="future"></p>
-        </div>
-        <div class="bk_about" id="about_2">
-          <p class="about_title my-2">到案日期計算機</p>
-          <hr>
-          <div class="bk_date">
-            <p class="about_text date_text" id="day_30"></p>
-            <hr class="br_date">
-            <p class="about_text date_text" id="day_45"></p>
-          </div>
-        </div>
-        <div class="bk_about" id="about_4">
-          <p class="about_title my-2">公告</p>
-          <hr>
-          <p class="about_text" id="notice"></p>
-        </div>
-      </main>
-    </body>
+      </div>
+      <div id="about_3" class="border border-3 mx-3 my-2 rounded-3">
+        <h4 class="text-center my-2 text-primary fw-bolder">公告</h4>
+        <hr class="border-2">
+        <p class="text-body fs-6 fw-semibold mx-4" id="notice"></p>
+      </div>
+      <div id="about_4" class="border border-3 mx-3 my-2 rounded-3">
+        <h4 class="text-center my-2 text-primary fw-bolder">已知問題與未來展望</h4>
+        <hr class="border-2">
+        <p class="text-body fs-6 fw-semibold mx-4" id="future"></p>
+      </div>
+    </div>
+  </main>
+</body>
+
 </html>
