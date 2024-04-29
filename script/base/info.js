@@ -1,7 +1,7 @@
 import {pages} from './pages.js';
 
 // 版本號(大版本.小版本.日+時)
-const app_ver =`1.10.2710 (Beta)`;
+const app_ver =`1.10.2910 (Beta)`;
 
 // 公告
 const notice =`
@@ -66,6 +66,12 @@ const collection =`
     <br>　　修訂日期：${pages.PA.revision}
     <p class="collection_text">◎　${pages.PW.name_all}
     <br>　　修訂日期：${pages.PW.revision}
+    <p class="collection_text">◎　${pages.CC.name_all}
+    <br>　　修訂日期：${pages.CC.revision}
+    <p class="collection_text">◎　${pages.CP.name_all}
+    <br>　　修訂日期：${pages.CP.revision}
+    <p class="collection_text">◎　${pages.SO.name_all}
+    <br>　　修訂日期：${pages.SO.revision}
 `;
 
 // 刷新首頁
