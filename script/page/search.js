@@ -137,10 +137,10 @@ function refresh_text(r_list, key_word) {
     `;
   r_list.forEach((value, index) => {
       html +=`
-      <div id="article-${value.rg}-${value.article}" class="article">
+      <div id="article-${value.code}-${value.article}" class="article">
         <div class="article-title d-flex mt-4 mb-2 pb-1 border-bottom border-primary-subtle">
             <h4 class="d-inline me-auto" data-rg="${value.rg}">${value.index}</h4>
-            <button type="button" class="btn btn-primary btn-sm me-2 h-75" disabled>分享</button>
+            <!-- <button type="button" class="btn btn-primary btn-sm me-2 h-75" disabled>分享</button> --!>
         </div>
         <div class="col-data">
             <div class="law-article">
