@@ -5,7 +5,7 @@ function refresh_list(r_list) {
   let html = '';
   r_list.forEach((value, index) => {
     html += `
-        <a class="list-group-item list-group-item-action d-flex" href="#article-${value.article}">
+        <a class="list-group-item list-group-item-action d-flex border-start-0 border-end-0" href="#article-${value.article}">
             <div class="list-article-no">第 ${value.article} 條</div>
             <div class="list-article-title text-secondary-emphasis">${value.title}</div>
         </a>
@@ -25,7 +25,7 @@ function refresh_text(r_list, r_object) {
                 </div>
                 <div class="col p-0">
                     <div class="card-body">
-                        <h2 class="card-title">${r_object.name_all}</h2>
+                        <h2 class="card-title">${r_object.name}</h2>
                         <p class="card-text text-secondary-emphasis">修訂日期：${r_object.revision}<br>來源：全國法規資料庫</p>
                         <button href="#" class="btn btn-primary" disabled>加入最愛</button>
                     </div>
@@ -39,6 +39,7 @@ function refresh_text(r_list, r_object) {
       <div id="article-${value.article}" class="article">
         <div class="article-title d-flex mt-4 mb-2 pb-1 border-bottom border-primary-subtle">
           <h4  class="d-inline me-auto" >第 ${value.article} 條</h4>
+          <a class="anchor-link" href="#article-${value.article}"></a>
           <!--<button type="button" class="btn btn-primary btn-sm me-2 h-75" disabled>函釋<span class="badge text-bg-info">0</span></button>
           <button type="button" class="bth_share btn btn-outline-primary btn-sm me-2 h-75" data-article="${value.article}">
             <img class="btn-img" src="../icons/icon_share.png" alt="分享" data-article="${value.article}">
@@ -88,13 +89,13 @@ function refresh_text(r_list, r_object) {
 
 // 主程式開始
 // 取得網址夾帶的值，判斷是哪種法規
-let r_name = new URLSearchParams(location.search);
-r_name = r_name.get('rg');
+const getData = new URLSearchParams(location.search);
+let r_name = getData.get('rg');
 let r_object = pages[r_name];
 let r_list = r_object.list;
 // 刷新主頁面
 refresh_list(r_list);
-$('title').html(`${r_object.name_title} - 交通鴿手`);
+$('title').html(`${r_object.title} - 交通鴿手`);
 $('#article_text').html(refresh_text(r_list, r_object));
 $(document).ready(() => {
   //偵測側邊欄點擊
