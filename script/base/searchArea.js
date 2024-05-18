@@ -60,6 +60,12 @@ const html_searchArea =`
             </div>
             <div class="col-6">
               <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" name="searchSwitch" id="switch_${pages.VS.code}" value="${pages.VS.code}">
+                  <label class="form-check-label" for="switch_${pages.VS.code}">${pages.VS.title}</label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-check form-switch">
                   <input class="form-check-input" type="checkbox" role="switch" name="searchSwitch" id="switch_${pages.keyPoint.code}" value="${pages.keyPoint.code}">
                   <label class="form-check-label" for="switch_${pages.keyPoint.code}">${pages.keyPoint.title}</label>
               </div>
@@ -175,7 +181,13 @@ function search_go(){
         }
       }
       localStorage.setItem('searchOptionGo', JSON.stringify(searchOptionGo));
-      location.href =`../pages/search.html?keyword=${keyWord}`;    
+      if($('title').html() == '首頁 - 交通鴿手'){
+        location.href =`./pages/search.html?keyword=${keyWord}`;
+      }
+      else{
+        location.href =`../pages/search.html?keyword=${keyWord}`;   
+      }
+       
   })
   $('#btn_advanceSearch').click(()=>{
     const keyWord = $('#keyWord').val()

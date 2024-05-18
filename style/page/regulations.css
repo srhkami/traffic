@@ -76,6 +76,10 @@
 .line-0400{
     margin-left: 2em;
 }
+.text-pre{
+    white-space: pre;
+    line-height: 180%;
+}
 .law-article div.show-number::before{
     content: counter(num) '';
     counter-increment: num 1; 
