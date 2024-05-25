@@ -21,10 +21,22 @@ function search_start(drive_type, car_type, bike_type, more_type){
         $('#output_text_second').html('　');
     }
     else if (code >=1 && code <=4 || code == 15){
-        $('#output_text_second').html('駕駛人處新臺幣六千元以上二萬四千元以下罰鍰，並當場禁止其駕駛。');
+        if(more_type == 1){
+            $('#output_text_second').html('處新臺幣二萬四千元罰鍰，並當場禁止其駕駛；如肇事致人重傷或死亡，得沒入該汽車。');
+        }
+        else{
+            $('#output_text_second').html('駕駛人處新臺幣六千元以上二萬四千元以下罰鍰，並當場禁止其駕駛。');
+        }
+        
     }
     else if (code >= 5 && code <= 10){
-        $('#output_text_second').html('汽車所有人及駕駛人各處新臺幣四萬元以上八萬元以下罰鍰，並當場禁止其駕駛。');
+        if(more_type == 1){
+            $('#output_text_second').html('處新臺幣八萬元罰鍰，並當場禁止其駕駛；如肇事致人重傷或死亡，得沒入該汽車。');
+        }
+        else{
+            $('#output_text_second').html('汽車所有人及駕駛人各處新臺幣四萬元以上八萬元以下罰鍰，並當場禁止其駕駛。');
+        }
+        
     }
     else if (code >= 11 && code <= 13) {
         $('#output_text_second').html('駕駛人處新臺幣一千八百元以上三千六百元以下罰鍰，並禁止其駕駛。');
@@ -41,10 +53,6 @@ function search_start(drive_type, car_type, bike_type, more_type){
         const car_type = Number($('#car_type').val());
         const bike_type = Number($('#bike_type').val());
         const more_type = Number($('#more_type').val());
-        console.log(drive_type);
-        console.log(car_type);
-        console.log(bike_type);
-        console.log(more_type);
         if (drive_type==0 || car_type==0 || bike_type==0){
             alert('選項請勿留空！');
         }
