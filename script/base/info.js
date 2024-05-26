@@ -2,21 +2,23 @@ import { pages } from './pages.js';
 import { list_kp } from '../list/kp_list.js'
 
 // 版本號(大版本.小版本.日+時)
-const app_ver = `1.13.2612`;
+const app_ver = `1.13.2617`;
 
 // 公告
 const notice = `
-  v1.13 主要更新內容(113/05/26)：
-  <br>
-  <br>　◎ 加入「意見回饋」頁面，<span class="text-danger">歡迎各位學長姐踴躍投稿文章！</span>
-  <br>　◎ 「法規」增加了章節顯示。
-  <br>　◎ 「關於」增加了Android手機版下載功能。
-  <br>　<button type="button" id="showUpdate" class="btn btn-outline-secondary mt-3" data-bs-toggle="modal"
+  v1.13 更新重點：
+  <ul>
+  <li>加入「意見回饋」頁面，<span class="text-danger">歡迎各位學長姐踴躍投稿文章！</span></li>
+  <li>「法規」增加了章節顯示。</li>
+  <li>「關於」增加了Android手機版下載功能。</li>
+  </ul>
+  <button type="button" id="showUpdate" class="btn btn-outline-secondary ms-3 mb-3" data-bs-toggle="modal"
   data-bs-target="#popUpArea">查看更新日誌</button>
-  <br>
   <br>已知問題：
-  <br>　◎ 附件連結至全國法規資料庫，在首次點擊時總會失效。
-  <br>　◎ 使用內網瀏覽設置規則圖片可能無法顯示。
+  <ul>
+  <li>附件連結至全國法規資料庫，在首次點擊時總會失效。</li>
+  <li>使用內網瀏覽設置規則圖片可能無法顯示。</li>
+  </ul>
 `;
 
 // 更新日誌
