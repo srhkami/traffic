@@ -29,7 +29,7 @@ function search_every(keyWord, r_object) {
         article: value.article,
         index: `《${r_object.title}》第 ${value.article} 條`,
         title: value.title,
-        text: value.text.replaceAll(keyWord, `<i class="highlight">${keyWord}</i>`)
+        text: value.text.replaceAll(keyWord, `<mark>${keyWord}</mark>`)
       };
       new_list.push(netItem);
     }
@@ -88,7 +88,7 @@ function refresh_list(list_output) {
       `;
     }
   });
-  $('#list_article').html(html);
+  $('#list-article').html(html);
 }
 
 // 函式：刷新所有搜尋結果條文
@@ -163,7 +163,7 @@ keyWord.forEach((value, index) => {
   list_output = search_again(value, list_output)
 })
 refresh_list(list_output);
-$('#article_text').html(refresh_text(list_output, keyWord));
+$('#article-text').html(refresh_text(list_output, keyWord));
 
 $(document).ready(() => {
   //偵測側邊欄點擊

@@ -1,4 +1,4 @@
-class KeyPoint {
+class Essay {
   constructor(code, title, author, update, text) {
     this.code = code;
     this.title = title;
@@ -9,7 +9,7 @@ class KeyPoint {
 }
 
 export const list_kp = [
-    new KeyPoint(
+    new Essay(
     'licenseState',
     '駕照、牌照異常狀態一覽',
     '無奈 學長',
@@ -33,7 +33,7 @@ export const list_kp = [
       <p>顯示為【吊扣】，就是有效之牌照、駕照於一定期間不得使用。駕籍會顯示吊扣期間之起迄日期，車籍則只會顯示「執行條例處分吊扣」(有顯示即為吊扣狀態)。</p>
     `
   ),
-  new KeyPoint(
+  new Essay(
     'fakeCarLicense',
     '偽造號牌之舉發及偵辦',
     '無奈 學長',
@@ -56,7 +56,7 @@ export const list_kp = [
       <p>※ 亦歡迎使用「<a href="../pages/carLicense.html" >牌照違規速查</a>」功能一鍵查詢違反法條 ※</p>
     `
   ),
-  new KeyPoint(
+  new Essay(
     'noCarLicense',
     '未懸掛號牌之舉發',
     '無奈 學長',
@@ -94,16 +94,16 @@ export const list_kp = [
       <p>※ 亦歡迎使用「<a href="../pages/carLicense.html" >牌照違規速查</a>」功能一鍵查詢違反法條 ※</p>
     `
   ),
-  new KeyPoint(
+  new Essay(
     'otherCarLicense',
     '懸掛他車號牌之舉發',
     '無奈 學長',
     '112 年 05 月 16 日',
     `
     <h4 class="mt-4 mb-3">行駛狀態</h4>
-    <p>①	車體部分，比照「<a href="../pages/keypoint.html?item=noCarLicense">未懸掛號牌之舉發</a>」一文程序辦理，另舉發<a href="#" class="showArticle" data-bs-toggle="modal" data-bs-target="#popUpArea" data-rg="PH-12">舉罰條例12條</a>1項5款「使用他車牌照」。</p>
+    <p>①	車體部分，比照「<a href="../pages/Essay.html?item=noCarLicense">未懸掛號牌之舉發</a>」一文程序辦理，另舉發<a href="#" class="showArticle" data-bs-toggle="modal" data-bs-target="#popUpArea" data-rg="PH-12">舉罰條例12條</a>1項5款「使用他車牌照」。</p>
     <p>②	他車牌不論車籍如何，舉發「牌照借供他車使用」、暫代保管汽牌○面(機牌1面)。惟他車牌如為失竊狀態，原則上不舉發他車牌之所有人。但經查明報案時間比對懸掛時間，而有積極事證得證明他車牌之所有人將車牌借供他人使用，仍應舉發12.1.5「牌照借供他車使用」。</p>
-    <p>③	他車牌如為偽造車牌，舉發車體所有人12.1.3，違反刑法部分請參閱「<a href="../pages/keypoint.html?item=fakeCarLicense">偽造號牌之舉發及偵辦</a>」一文第二段</a>。</p>
+    <p>③	他車牌如為偽造車牌，舉發車體所有人12.1.3，違反刑法部分請參閱「<a href="../pages/Essay.html?item=fakeCarLicense">偽造號牌之舉發及偵辦</a>」一文第二段</a>。</p>
     <p>④	他車牌如為變造車牌：</p>
     <p>❶ 變造之車牌，如為他人所有，舉發車體所有人12.1.3。
     <br>→變造車牌還原後車號，如非失竊狀態，則舉發12.1.5「牌照借供他人使用」。
@@ -125,7 +125,7 @@ export const list_kp = [
     <p>※ 亦歡迎使用「<a href="../pages/carLicense.html" >牌照違規速查</a>」功能一鍵查詢違反法條 ※</p>
     `
   ),
-  new KeyPoint(
+  new Essay(
     'bikeMirror',
     '機車照後鏡大小之取締',
     '無奈 學長',
@@ -146,7 +146,7 @@ export const list_kp = [
     <p >以上個人整理分享，也有實際就改裝之鏡面太小予以製單舉發。取締時需備尺測量，舉發處罰條例16條1項2款：變更原有設備(致影響行車安全)，加註①「量測圓形鏡僅直徑xx公釐，影響行車安全」或②「非圓形鏡無法鑲入78公釐圓，影響行車安全」，責令改正、「限於○月○日○時前辦理」(依<a href="#" class="showArticle" data-bs-toggle="modal" data-bs-target="#popUpArea" data-rg="DR-13">處理細則13條2項</a>所訂，期間得酌定於四日以內)。</p></p>
     `
   ),
-  new KeyPoint(
+  new Essay(
     'visionSystem',
     '行車視野輔助系統裝設規定',
     '無奈 學長',
@@ -171,7 +171,7 @@ export const list_kp = [
       <p>② 總重（車重+載重）逾3500kg至5000kg。</p>
     `
   ),
-  new KeyPoint(
+  new Essay(
     'rulingTerm',
     '裁決與申訴時限',
     '無奈 學長',
@@ -242,7 +242,7 @@ export const list_kp = [
       <p>行政罰法 27條1項</p>
     `
   ),
-  new KeyPoint(
+  new Essay(
     'lineParking',
     '紅黃白線停車規定',
     '無奈 學長',
@@ -289,7 +289,7 @@ export const list_kp = [
       <p><a href="https://www.mvdis.gov.tw/webMvdisLaw/SorderContent.aspx?SoID=16195">交通部108.06.26交路字第1085007741號函</a>：併排停車、併排臨時停車定義</p>    
     `
   ),
-  new KeyPoint(
+  new Essay(
     'taxi',
     '計程車常見違規項目',
     '黃家進 學長',
@@ -692,7 +692,7 @@ export const list_kp = [
       </p>
     `
   ),
-  new KeyPoint(
+  new Essay(
     'unknownName',
     '舉發交通違規拒絕告知身分處理程序',
     '黃文章 學長',
