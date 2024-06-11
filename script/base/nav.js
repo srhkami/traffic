@@ -246,7 +246,7 @@ const asideHtml = `
       </div>
     </div>
     <div class="p-1 my-2 border-start border-3 border-primary">
-      <a class="menu-item dropdown-item d-flex mb-1" href="..${pages.feedback.href}">
+      <a class="dropdown-item d-flex mb-1" href="..${pages.feedback.href}">
         <img class="i-15 me-1" src="..${pages.feedback.icon}" alt="">
         <span>${pages.feedback.title}</span>
       </a>
@@ -285,14 +285,17 @@ function loadSidebar(no){
 }
 // 函式：儲存側邊欄設定
 function saveSidebar(){
-  $('.menu-item').click((e)=>{
+  $('.menu-item').click(()=>{
     let sidebarOption = JSON.parse(localStorage.getItem('sidebar'));
-    if (e.target.className.includes('collapsed')){
-      sidebarOption[e.target.dataset.menuNo] = 0;
-    }
-    else{
-      sidebarOption[e.target.dataset.menuNo] = 1;
-    }
+    $('.menu-item').each((index, value) =>{
+      if($(value).hasClass('collapsed')){
+        sidebarOption[index] = 0;
+      }
+      else{
+        sidebarOption[index] = 1;
+      }
+      
+    });
     localStorage.setItem('sidebar',JSON.stringify(sidebarOption));
   })
 }
