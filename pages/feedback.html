@@ -11,18 +11,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
   <link href="../style/base/bootstrap.css" rel="stylesheet">
-  <script src="../script/base/bootstrap-5.3.3/bootstrap.bundle.min.js"></script>
+  <script src="../script/bootstrap-5.3.3/bootstrap.bundle.min.js"></script>
   <!-- 設定檔 -->
   <link rel="stylesheet" href="../style/base/general.css" />
   <link rel="stylesheet" href="../style/page/feedback.css" />
-  <script type='module' src='../script/base/header.js'></script>
+  <script type='module' src='../script/base/nav.js'></script>
   <script type='module' src='../script/base/searchArea.js'></script>
   <script type='module' src="../script/base/info.js"></script>
 </head>
 
 <body>
-  <!-- <svg href="../icons/bootstrap-icons-1.11.3/bootstrap-icons.svg" class="d-none"></svg> -->
-  <nav id="pageHeader" class="sticky-top navbar navbar-expand-md bg-body-tertiary"></nav>
+  <nav id="pageHeader" class="sticky-top navbar navbar-expand-lg bg-body"></nav>
   <!-- 彈出視窗 -->
   <div id="popUp">
     <!-- 搜尋 -->
@@ -54,20 +53,23 @@
             </p>
           </div>
           <div class="modal-footer">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZgAxNzwEf9TlxQ8zPuPR52xlEAhsG80jHpA9aqgitYFuTUA/viewform?usp=sf_link" class="btn btn-primary">填寫表單</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZgAxNzwEf9TlxQ8zPuPR52xlEAhsG80jHpA9aqgitYFuTUA/viewform?usp=sf_link"
+              class="btn btn-primary">填寫表單</a>
           </div>
-        </div>    
+        </div>
       </div>
     </div>
   </div>
-  <main class="container">
+  <main class="container-xl d-flex">
+    <aside id="sidebar" class="offcanvas-lg offcanvas-start overflow-hidden me-2"></aside>
     <div id="mainContent" class="px-3 py-3">
       <div class="row">
         <div class="col-12 mb-3">
           <div class="card border-0 mb-3 h-100">
             <div class="row g-0 h-100">
               <div class="col-4 d-flex">
-                <img src="../icons/icon_message.png" class="img-fluid rounded-start m-auto d-none d-lg-inline-block" alt="...">
+                <img src="../icons/icon_message.png" class="img-fluid rounded-start m-auto d-none d-lg-inline-block"
+                  alt="...">
                 <div class="m-auto d-block d-lg-none">
                   <img src="../icons/icon_message.png" class="img-fluid mb-4" alt="...">
                   <h3 class="text-primary">意見回饋</h3>
@@ -89,7 +91,7 @@
       </div>
       <div class="row">
         <div class="col-12 col-lg-6 mb-3">
-          <div class="card border border-3 mb-3 h-100">
+          <div class="card shadow-lg mb-3 h-100">
             <div class="row g-0 h-100">
               <div class="col-4 d-flex ">
                 <img src="../icons/icon_question.png" class="img-fluid rounded-start m-auto" alt="...">
@@ -98,48 +100,15 @@
                 <div class="card-body h-100">
                   <h5 class="card-title text-primary mb-3">聯繫作者</h5>
                   <p class="card-text mb-4">舉凡遇到網頁BUG、法條/文章錯誤或過舊，以及任何想留言給作者的話，請填寫此表單：</p>
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZgAxNzwEf9TlxQ8zPuPR52xlEAhsG80jHpA9aqgitYFuTUA/viewform?usp=sf_link" class="btn btn-primary">我要回報</a>
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZgAxNzwEf9TlxQ8zPuPR52xlEAhsG80jHpA9aqgitYFuTUA/viewform?usp=sf_link"
+                    class="btn btn-primary">我要回報</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div class="col-12 col-lg-6 mb-3">
-          <div class="card border border-3 mb-3 h-100">
-            <div class="row g-0 h-100">
-              <div class="col-4 d-flex ">
-                <img src="../icons/icon_create-document.png" class="img-fluid rounded-start m-auto" alt="...">
-              </div>
-              <div class="col-8">
-                <div class="card-body h-100">
-                  <h5 class="card-title text-primary mb-3">函釋與判決投稿</h5>
-                  <p class="card-text mb-4">
-                    違規樣態百百種，函釋及判決往往關係著執法的標準，若您有發現值得分享的內容，歡迎透過此表單回報作者，加入「交通鴿手」中！
-                  </p>
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdDdE5wt_LC-oMOLBE-x4UZjp3GEaswgD0mCmv7w7_rv7TEzw/viewform?usp=sf_link" class="btn btn-primary disabled">尚未開放</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-        <div class="col-12 col-lg-6 mb-3">
-          <div class="card border border-3 mb-3 h-100">
-            <div class="row g-0 h-100">
-              <div class="col-4 d-flex ">
-                <img src="../icons/icon_article.png" class="img-fluid rounded-start m-auto" alt="...">
-              </div>
-              <div class="col-8">
-                <div class="card-body h-100">
-                  <h5 class="card-title text-primary mb-3">文章投稿</h5>
-                  <p class="card-text mb-4">如果您擅長彙整交通相關的法規、函釋、判決、SOP或相關經驗，歡迎將文章發佈在本網站「舉發違規要點」中，讓更多人受用！</p>
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSe7juF6yOmvXqFx2Z8v4s_fEXL2pwUQ6eB3STJdGpgcD9caYg/viewform?usp=sf_link" class="btn btn-primary">我要投稿</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-6 mb-3">
-          <div class="card border border-3 mb-3 h-100">
+          <div class="card shadow-lg mb-3 h-100">
             <div class="row g-0 h-100">
               <div class="col-4 d-flex ">
                 <img src="../icons/icon_enter.png" class="img-fluid rounded-start m-auto" alt="...">
@@ -156,15 +125,49 @@
             </div>
           </div>
         </div>
+        <div class="col-12 col-lg-6 mb-3">
+          <div class="card shadow-lg mb-3 h-100">
+            <div class="row g-0 h-100">
+              <div class="col-4 d-flex ">
+                <img src="../icons/icon_website.png" class="img-fluid rounded-start m-auto" alt="...">
+              </div>
+              <div class="col-8">
+                <div class="card-body h-100">
+                  <h5 class="card-title text-primary mb-3">網站投稿</h5>
+                  <p class="card-text mb-4">只要是各位學長姐工作上常用、好用的網站，不限交通，都歡迎投稿分享。<span class="text-danger">相關功能預計會在下個版本上線。</span>
+                  </p>
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBYBkSHomGF-8RIYrzmhOwOcVI53BvWoZ-uYX-CtfwwkJ7sQ/viewform?usp=sf_link"
+                    class="btn btn-primary">我要投稿</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 mb-3">
+          <div class="card shadow-lg mb-3 h-100">
+            <div class="row g-0 h-100">
+              <div class="col-4 d-flex ">
+                <img src="../icons/icon_create-document.png" class="img-fluid rounded-start m-auto" alt="...">
+              </div>
+              <div class="col-8">
+                <div class="card-body h-100">
+                  <h5 class="card-title text-primary mb-3">函釋與判決投稿</h5>
+                  <p class="card-text mb-4">
+                    違規樣態百百種，函釋及判決往往關係著執法的標準，若您有發現值得分享的內容，歡迎透過此表單回報作者，加入「交通鴿手」中！
+                  </p>
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdDdE5wt_LC-oMOLBE-x4UZjp3GEaswgD0mCmv7w7_rv7TEzw/viewform?usp=sf_link"
+                    class="btn btn-primary disabled">尚未開放</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-      
+      <!-- 底部聲明 -->
+      <div id="websiteLicense" class="d-flex"></div>
     </div>
   </main>
-  <!-- 底部聲明 -->
-  <div id="websiteLicense" class="d-flex"></div>
 </body>
 
 </html>
-
-
-

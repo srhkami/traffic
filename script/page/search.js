@@ -7,8 +7,8 @@ function search_start(keyWord, options) {
   Object.values(pages).forEach((value)=>{
     if(options[value.code]){
       let new_list;
-      if(value.code == 'keyPoint'){
-        new_list = search_keyPoint(keyWord)
+      if(value.code == 'keypoint'){
+        new_list = search_keypoint(keyWord)
       }
       else{
         new_list = search_every(keyWord, value);
@@ -38,12 +38,12 @@ function search_every(keyWord, r_object) {
 }
 
 // 函式：依關鍵字搜尋符合的「要點」
-function search_keyPoint(keyWord) {
+function search_keypoint(keyWord) {
   let new_list = [];
   list_kp.forEach((value) => {
     if (value.text.includes(keyWord)) {
       let netItem = {
-        code: 'keyPoint',
+        code: 'keypoint',
         article: value.code,
         index: value.title,
         title: value.title,
@@ -103,7 +103,7 @@ function refresh_text(list_output, keyWord) {
   let html = `
     <div class="card rounded-3">
       <div class="row mx-0">
-        <div class="p-0 d-flex align-items-center justify-content-center div_icon_page">
+        <div class="p-0 d-flex align-items-center justify-content-center" style="width: 120px;">
           <img src="../icons/icon_search.png" class="card-img-right ps-3" alt="...">
         </div>
         <div class="col p-0">
@@ -167,8 +167,8 @@ $('#article-text').html(refresh_text(list_output, keyWord));
 
 $(document).ready(() => {
   //偵測側邊欄點擊
-  $("#sidebar a,.btn-close").click(() => {
-    setTimeout(() => $('.offcanvas-lg').offcanvas('hide'), 50)
+  $("#itemMenu a,.btn-close").click(() => {
+    setTimeout(() => $('.offcanvas-top').offcanvas('hide'), 50)
   });
   //再檢索搜尋
   $('#btn_searchAgainGo').click(()=>{

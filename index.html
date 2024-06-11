@@ -6,76 +6,115 @@
   <script src='./script/base/theme.js'></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>首頁 - 交通鴿手</title>
+  <title>交通鴿手</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
   <link href="./style/base/bootstrap.css" rel="stylesheet">
-  <script src="./script/base/bootstrap-5.3.3/bootstrap.bundle.min.js"></script>
+  <script src="./script/bootstrap-5.3.3/bootstrap.bundle.min.js"></script>
   <!-- 設定檔 -->
   <link rel="stylesheet" href="./style/base/general.css" />
   <link rel="stylesheet" href="./style/page/index.css" />
-  <script type='module' src='./script/base/header.js'> </script>
-  <script type='module' src='./script/base/quickEnter.js'></script>
+  <script type='module' src='./script/base/nav.js'></script>
   <script type='module' src='./script/base/searchArea.js'></script>
-  <script type='module' src='./script/page/index.js'> </script>
+  <script type='module' src="./script/page/index.js"></script>
+  <script type='module' src="./script/base/quickEnter.js"></script>
   <script type='module' src="./script/base/info.js"></script>
 </head>
 
 <body>
-  <nav id="pageHeader" class="sticky-top navbar navbar-expand-md bg-body-tertiary"></nav>
+  <nav id="pageHeader" class="sticky-top navbar navbar-expand-lg bg-body"></nav>
   <!-- 彈出視窗 -->
   <div id="popUp">
     <!-- 搜尋 -->
-    <div id="searchArea" class="modal fade" tabindex="-1"></div>
+    <div id="searchArea" class="modal fade" tabindex="-1">
+    </div>
     <!-- 通用彈出視窗 -->
     <div id="popUpArea" class="modal fade" tabindex="-1">
       <div class="modal-dialog modal-dialog-scrollable"></div>
     </div>
-    <!-- 快速導航設定 -->
-    <div id="quickSetting" class="modal fade" tabindex="-1"></div>
   </div>
-  <main class="container">
-    <div id="mainContent" class="col-12 h-100 overflow-auto px-3 py-3">
-      <div id="about_1" class="border border-3 mx-3 my-2 pb-3 rounded-3">
-        <h4 class="text-center my-2 text-primary fw-bolder">快速導航</h4>
-        <!-- 快速導航之設定按鈕 -->
-        <button type="button" id="btn_quick_setting" class="bg-transparent border-0" data-bs-toggle="modal"
-          data-bs-target="#quickSetting">
-          <img id="icon_quick" src="./icons/icon_setting.png" alt="">
-        </button>
-        <hr class="border-2">
-        <div class="container">
-          <!-- 快速導航區域 -->
-          <div id="quickArea" class="row justify-content-around px-0"></div>
+  <!-- 主區域 -->
+  <main class="container-xl d-flex">
+    <!-- 側邊選單 -->
+    <aside id="sidebar" class="offcanvas-lg offcanvas-start overflow-hidden me-2"></aside>
+    <div id="mainContent" class="px-2 w-100">
+      <div class="row my-2">
+        <div class="col-12 col-lg-10 mx-auto">
+          <div id="carouselExample" class="carousel slide shadow-lg" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+            </div>          
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <a href="./pages/feedback.html">
+                  <img src="./file/index/群組招募圖.png" class="d-block w-100" alt="...">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a id="showUpdate" data-bs-toggle="modal" data-bs-target="#popUpArea">
+                  <img src="./file/index/版本更新.png" class="d-block w-100" alt="...">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="./pages/feedback.html">
+                  <img src="./file/index/網站投稿.png" class="d-block w-100" alt="...">
+                </a>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
         </div>
       </div>
-      <div id="about_2" class="border border-3 mx-3 my-2 rounded-3">
-        <h4 class="text-center my-2 text-primary fw-bolder">到案日期</h4>
-        <hr class="border-2">
-        <div class="row g-0">
-          <div class="col-6">
-            <p class="text-body fs-6 fw-semibold text-center border-end" id="day_30"></p>
+      <div class="row g-3 my-2">
+        <div id="quickArea" class="col-12 col-md-6 d-md-none">
+          <div class="card bg-light-subtle shadow-lg rounded-3 h-100">
+            <h4 class="card-header text-center text-primary fw-bolder">快速入口</h4>
+            <div id="quickEnter" class="card-body row justify-content-around p-4">
+            </div>
+            <div id="arriveDate" class="card-footer text-body-secondary row m-0">
+              <div class="col-6">
+                <p class="text-center mb-0">30日到案</p>
+                <p class="day-30 text-center fw-bolder mb-0"></p>
+              </div>
+              <div class="col-6">
+                <p class="text-center mb-0">45日到案</p>
+                <p class="day-45 text-center fw-bolder mb-0"></p>
+              </div>
+            </div>          
           </div>
-          <div class="col-6">
-            <p class="text-body fs-6 fw-semibold text-center border-start" id="day_45"></p>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card bg-light-subtle shadow-lg rounded-3 h-100">
+            <h4 class="card-header text-center text-primary fw-bolder">最新消息</h4>
+            <div class="card-body">
+              <p class="text-body fs-6 fw-semibold mx-2" id="notice"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card bg-light-subtle shadow-lg rounded-3 h-100">
+            <h4 class="card-header text-center text-primary fw-bolder">推廣訊息</h4>
+            <div class="card-body">
+              <p class="text-body fs-6 fw-semibold mx-2" id="future"></p>
+            </div>
           </div>
         </div>
       </div>
-      <div id="about_3" class="border border-3 mx-3 my-2 rounded-3">
-        <h4 class="text-center my-2 text-primary fw-bolder">最新消息</h4>
-        <hr class="border-2">
-        <p class="text-body fs-6 fw-semibold mx-4" id="notice"></p>
-      </div>
-      <div id="about_4" class="border border-3 mx-3 my-2 rounded-3">
-        <h4 class="text-center my-2 text-primary fw-bolder">推廣訊息</h4>
-        <hr class="border-2">
-        <p class="text-body fs-6 fw-semibold mx-4" id="future"></p>
-      </div>
+      
+      <!-- 底部聲明 -->
+      <div id="websiteLicense" class="d-flex"></div>
     </div>
   </main>
-  <!-- 底部聲明 -->
-  <div id="websiteLicense" class="d-flex"></div>
 </body>
 
 </html>

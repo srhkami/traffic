@@ -3,7 +3,7 @@ import { list_PH, list_SR, list_DR, list_ML, list_PA, list_PW, list_TA, list_CC,
 //頁面預設類別
 class Page {
   constructor(
-    type, //種類
+    type, //頁面種類
     code, //代稱
     title, //標題用縮寫
     name, //全稱
@@ -25,7 +25,7 @@ class Page {
 
 export const pages = {
   PH: new Page(
-    'RG',
+    '法規',
     'PH',
     '處罰條例',
     '道路交通管理處罰條例',
@@ -35,7 +35,7 @@ export const pages = {
     list_PH,
   ),
   SR: new Page(
-    'RG',
+    '法規',
     'SR',
     '安全規則',
     '道路交通安全規則',
@@ -45,7 +45,7 @@ export const pages = {
     list_SR
   ),
   DR: new Page(
-    'RG',
+    '法規',
     'DR',
     '處理細則',
     '違反道路交通管理事件統一裁罰基準及處理細則',
@@ -55,7 +55,7 @@ export const pages = {
     list_DR
   ),
   ML: new Page(
-    'RG',
+    '法規',
     'ML',
     '設置規則',
     '道路交通標誌標線號誌設置規則',
@@ -65,7 +65,7 @@ export const pages = {
     list_ML
   ),
   TA: new Page(
-    'RG',
+    '法規',
     'TA',
     '事故處理辦法',
     '道路交通事故處理辦法',
@@ -75,7 +75,7 @@ export const pages = {
     list_TA
   ),
   VS: new Page(
-    'RG',
+    '法規',
     'VS',
     '車輛審驗辦法',
     '車輛型式安全審驗管理辦法',
@@ -85,7 +85,7 @@ export const pages = {
     list_VS
   ),
   PA: new Page(
-    'RG',
+    '法規',
     'PA',
     '警職法',
     '警察職權行使法',
@@ -95,7 +95,7 @@ export const pages = {
     list_PA
   ),
   PW: new Page(
-    'RG',
+    '法規',
     'PW',
     '警械使用條例',
     '警械使用條例',
@@ -104,89 +104,8 @@ export const pages = {
     '/pages/regulations.html?rg=PW',
     list_PW
   ),
-
-  DL: new Page(
-    'PAGE',
-    'DL',
-    '駕照違規速查',
-    '駕照違規速查',
-    '民國 113 年 04 月 08 日',
-    '/icons/icon_DL.png',
-    '/pages/driveLicense.html',
-    ''
-  ),
-  CL: new Page(
-    'PAGE',
-    'CL',
-    '牌照違規速查',
-    '牌照違規速查',
-    '民國 113 年 04 月 08 日',
-    '/icons/icon_CL.png',
-    '/pages/carLicense.html',
-    ''
-  ),
-  overload: new Page(
-    'PAGE',
-    'overload',
-    '超載計算機',
-    '超載計算機',
-    '',
-    '/icons/icon_cargo2.png',
-    '/pages/overload.html',
-    ''
-  ),
-  keyPoint: new Page(
-    'PAGE',
-    'keyPoint',
-    '違規舉發要點',
-    '違規舉發要點',
-    '',
-    '/icons/icon_policeFine.png',
-    '/pages/keypoint.html',
-    ''
-  ),
-  about: new Page(
-    'PAGE',
-    'about',
-    '關於',
-    '關於「交通鴿手」',
-    '',
-    '/icons/icon_about.png',
-    '/pages/about.html',
-    ''
-  ),
-  feedback: new Page(
-    'LINK',
-    'feedback',
-    '意見回饋',
-    '意見回饋',
-    '',
-    '/icons/icon_message.png',
-    '/pages/feedback.html',
-    ''
-  ),
-  search: new Page(
-    'PAGE',
-    'search',
-    '搜尋',
-    '搜尋',
-    '',
-    '/icons/icon_search_2.png',
-    '/pages/search.html',
-    ''
-  ),
-  index: new Page(
-    'PAGE',
-    'index',
-    '首頁',
-    '首頁',
-    '',
-    '/icons/icon_home.png',
-    '/index.html',
-    ''
-  ),
   CC: new Page(
-    'RG',
+    '法規',
     'CC',
     '刑法',
     '刑法',
@@ -196,7 +115,7 @@ export const pages = {
     list_CC
   ),
   CP: new Page(
-    'RG',
+    '法規',
     'CP',
     '刑事訴訟法',
     '刑事訴訟法',
@@ -206,7 +125,7 @@ export const pages = {
     list_CP
   ),
   SO: new Page(
-    'RG',
+    '法規',
     'SO',
     '社維法',
     '社會秩序維護法',
@@ -215,4 +134,94 @@ export const pages = {
     '/pages/regulations.html?rg=SO',
     list_SO
   ),
+  codeSearch: new Page(
+    '速查',
+    'codeSearch',
+    '違規代碼查詢',
+    '違規代碼查詢',
+    '',
+    '/icons/icon_windowSearch.png',
+    '/pages/codeSearch.html',
+    ''
+  ),
+  DL: new Page(
+    '速查',
+    'DL',
+    '駕照違規速查',
+    '駕照違規速查',
+    '',
+    '/icons/icon_DL.png',
+    '/pages/driveLicense.html',
+    ''
+  ),
+  CL: new Page(
+    '速查',
+    'CL',
+    '牌照違規速查',
+    '牌照違規速查',
+    '',
+    '/icons/icon_CL.png',
+    '/pages/carLicense.html',
+    ''
+  ),
+  overload: new Page(
+    '速查',
+    'overload',
+    '超載計算機',
+    '超載計算機',
+    '',
+    '/icons/icon_cargo2.png',
+    '/pages/overload.html',
+    ''
+  ),
+  keypoint: new Page(
+    '速查',
+    'keypoint',
+    '違規舉發要點',
+    '違規舉發要點',
+    '',
+    '/icons/icon_policeFine.png',
+    '/pages/keypoint.html',
+    ''
+  ),
+  about: new Page(
+    '頁面',
+    'about',
+    '關於',
+    '關於',
+    '',
+    '/icons/icon_setting.png',
+    '/pages/about.html',
+    ''
+  ),
+  feedback: new Page(
+    '頁面',
+    'feedback',
+    '意見回饋',
+    '意見回饋',
+    '',
+    '/icons/icon_message.png',
+    '/pages/feedback.html',
+    ''
+  ),
+  search: new Page(
+    '頁面',
+    'search',
+    '搜尋',
+    '搜尋',
+    '',
+    '/icons/icon_search.png',
+    '/pages/search.html',
+    ''
+  ),
+  index: new Page(
+    '頁面',
+    'index',
+    '首頁',
+    '首頁',
+    '',
+    '/icons/icon_home.png',
+    '/index.html',
+    ''
+  )
 }
