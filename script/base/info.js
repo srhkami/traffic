@@ -2,14 +2,14 @@ import { pages } from './pages.js';
 import { list_kp } from '../list/kp_list.js'
 
 // 版本號(大版本.小版本.日+時)
-const app_ver = `1.20.1`;
+const app_ver = `1.20.2`;
 
 // 公告
 const notice = `
   「交通鴿手」v1.20更新重點：
   <ul>
   <li>整體介面更新、排版 ，增加書籤及自訂介面功能。</li>
-  <li>加入「違規代碼查詢」頁面。</li>
+  <li>加入「違規代碼查詢」頁面。(因發現問題暫時下架，稍後上線)</li>
   </ul>
   <br>已知問題：
   <ul>
