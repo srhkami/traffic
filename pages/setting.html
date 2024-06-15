@@ -3,10 +3,11 @@
 
 <head>
   <script src="../script/base/jquery-3.7.1.min.js"></script>
+  <script type='module' src='../script/localForage-1.10.0/dist/localforage.js'></script>
   <script src='../script/base/theme.js'></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>關於 - 交通鴿手</title>
+  <title>設定 - 交通鴿手</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
@@ -17,8 +18,10 @@
   <link rel="stylesheet" href="../style/page/about.css">
   <script type='module' src='../script/base/nav.js'></script>
   <script type='module' src='../script/base/searchArea.js'></script>
-  <script type='module' src='../script/page/about.js'></script>
-  <script type='module' src='../script/base/info.js'></script>
+  <script type='module' src='../script/page/setting.js'></script>
+
+  <!-- <script type='module' src='../script/base/info.js'></script> -->
+
 </head>
 
 <body>
@@ -136,105 +139,36 @@
             <div class="mt-2 text-secondary text-end">※ 設定會在重新整理後生效</div>
           </div>
         </div>
-        <!-- 版本 -->
-        <div class="card shadow mb-3 px-0" id="about-1">
-          <div class="card-header text-primary d-flex fw-bolder">
-            版本
-            <button type="button" id="showUpdate" class="btn btn-sm btn-outline-primary ms-auto" data-bs-toggle="modal"
-              data-bs-target="#popUpArea">更新日誌
-            </button>
-          </div>
-          <div class="card-body">
-            <h5 id="app_ver" class="card-title"></h5>
-          </div>
-        </div>
-        <!-- 開發者 -->
-        <div class="card shadow mb-3 px-0" id="about-2">
+        <div class="card shadow mb-3 px-0" id="setting-2">
           <div class="card-header text-primary fw-bolder">
-            開發人員
+            更新資料庫
           </div>
           <div class="card-body">
-            <h5 class="card-title">開發者：蔡智楷 C.K.SAI</h5>
-            <p class="card-text fw-semibold mb-0">協作者：張耀東</p>
-            <p class="card-text fw-semibold">文章作者：無奈、黃家進、黃文章</p>
-          </div>
-        </div>
-        <!-- 特別銘謝 -->
-        <div class="card shadow mb-3 px-0" id="about-3">
-          <div class="card-header text-primary fw-bolder">
-            特別銘謝 / 資料參考：
-          </div>
-          <div class="card-body">
-            <h5 id="app_ver" class="card-title">「鴿來告訴你交通怎麼做」</h5>
-            <p class="card-text fw-semibold">群組及各位學長姐</p>
-          </div>
-        </div>
-        <!-- 開發工具 -->
-        <div class="card shadow mb-3 px-0" id="about-4">
-          <div class="card-header text-primary fw-bolder">開發工具</div>
-          <div class="card-body row">
-            <div class="col-12 col-md-6 col-lg-12 col-xl-6 row">
-              <div class="col-4 d-flex">
-                <a href="https://getbootstrap.com/" class="mx-auto">
-                  <img src="../icons/bootstrap-logo.svg" alt="" width="80px">
-                </a>
-              </div>
-              <div class="col-8">
-                <h5 class="card-title">Bootstrap</h5>
-                <p class="card-text">快速建立響應式網站</p>
-              </div>
+            <p class="card-title">說明：此功能僅對手機版適用，網頁版會隨時保持最新資料庫。</p>
+            <hr class="m-2">
+            <p id="dataVer" class="card-title"></p>
+            <p id="dateVer-new"  class="card-title text-danger"></p>
+            <button id="dataVer-check" class="btn btn-primary">檢查更新</button>
+            <!-- <button id="data-update" class="btn btn-primary">更新資料庫</button> -->
+            <hr class="m-2">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="check-0">
+              <label class="form-check-label" for="check-0">
+                在手機版「首頁」顯示快速入口
+                <br>
+                <small class="text-secondary">（推薦開啟，會在首頁顯示前四筆書籤）</small>
+              </label>
             </div>
-            <div class="col-12 col-md-6 col-lg-12 col-xl-6 row">
-              <div class="col-4 d-flex">
-                <a href="https://icons8.com/" class="mx-auto">
-                  <img src="../icons/icons8-logo.svg" alt="" width="80px">
-                </a>
-              </div>
-              <div class="col-8">
-                <h5 class="card-title">Icons8</h5>
-                <p class="card-text">免費圖標來源</p>
-              </div>
+            <div class="form-check form-switch ms-4">
+              <input class="form-check-input" type="checkbox" role="switch" id="check-1">
+              <label class="form-check-label" for="check-1">一併顯示到案日期</label>
+            </div>            
+            <hr class="m-2">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="check-2" checked>
+              <label class="form-check-label" for="check-2">在「側邊攔」顯示到案日期</label>
             </div>
-          </div>
-        </div>
-        <!-- 手機版下載 -->
-        <div class="card shadow mb-3 px-0" id="about-5">
-          <div class="row g-0 h-100">
-            <div class="col-4 d-flex ">
-              <img src="../icons/icon_smartphone.png" class="img-fluid rounded-start m-auto" alt="...">
-            </div>
-            <div class="col-8">
-              <div class="card-body">
-                <h5 class="card-title text-primary mb-3">手機版下載（beta）</h5>
-                <p class="card-text "><span
-                    class="text-danger">測試中，可能會遇到非預期的錯誤。</span><br>目前只提供Android版的APK檔下載，請確定會安裝非PLAY商店APP。因APP是離線版，不會自動更新內容，請定時查看是否有新版。
-                </p>
-                <a href="https://drive.google.com/drive/folders/1pmV6WZVdZ0RyfL8TvVDh9OI5Kc2OwkBO?usp=drive_link"
-                  class="btn btn-outline-primary">下載APK檔</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- 收錄法規 -->
-        <div class="card shadow mb-3 px-0" id="about-6">
-          <div class="row g-0 h-100">
-            <div class="col-4 d-flex ">
-              <img src="../icons/icon_file.png" class="img-fluid rounded-start m-auto" alt="...">
-            </div>
-            <div class="col-8">
-              <div class="card-body">
-                <h5 class="card-title text-primary mb-3">收錄法規</h5>
-                <p class="card-text ">這裡列出了本網頁收錄的所有法規修訂日期及源文件，如發現法規版本過舊、內容有誤，或建議收錄其他法規，請在「<a
-                    href="../pages/feedback.html">意見回饋</a>」頁面 聯繫作者。
-                </p>
-                <div class="btn-group" role="group" aria-label="Basic outlined example">
-                  <button type="button" id="showRG" class="btn btn-outline-primary" data-bs-toggle="modal"
-                    data-bs-target="#popUpArea">法規列表</button>
-                  <a href="https://docs.google.com/spreadsheets/d/1e0Qo742OBVeU0VnlTh-XDSMeh0HQZXEAWeUW9Pnf7RM/edit?usp=sharing"
-                    class="btn btn-outline-primary">源文件</a>
-                </div>
-              </div>
-            </div>
+            <div class="mt-2 text-secondary text-end">※ 設定會在重新整理後生效</div>
           </div>
         </div>
       </div>
@@ -258,23 +192,8 @@
           <a class="item-second list-group-item list-group-item-action" href="#setting-1">
             介面設定
           </a>
-          <a class="item-second list-group-item list-group-item-action" href="#about-1">
-            版本
-          </a>
-          <a class="item-second list-group-item list-group-item-action" href="#about-2">
-            開發人員
-          </a>
-          <a class="item-second list-group-item list-group-item-action" href="#about-3">
-            特別銘謝
-          </a>
-          <a class="item-second list-group-item list-group-item-action" href="#about-4">
-            開發工具
-          </a>
-          <a class="item-second list-group-item list-group-item-action" href="#about-5">
-            手機版下載
-          </a>
-          <a class="item-second list-group-item list-group-item-action" href="#about-6">
-            收錄法規
+          <a class="item-second list-group-item list-group-item-action" href="#setting-2">
+            更新資料庫
           </a>
         </div>
       </aside>
