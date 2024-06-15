@@ -1,6 +1,6 @@
 import { pages } from "../base/pages.js";
-import { updateData } from "../data/_database.js";
-import { checkLocalData } from "../data/_database.js"
+import { updateData } from "../data/database.js";
+import { checkLocalData } from "../data/database.js"
 
 // 函式：讀取書籤
 function loadBookmark() {
