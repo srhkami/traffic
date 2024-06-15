@@ -163,12 +163,12 @@ const asideHtml = `
       </a>
       <div class="collapse ${loadSidebar(2)[1]}" id="collapseExample2">
         <ul class="m-0" style="list-style-type:none">
-          <!--<li>
+          <li>
             <a class="list-group-item py-1" href="..${pages.codeSearch.href}">
               <img class="i-15 me-1" src="..${pages.codeSearch.icon}" alt="">
               ${pages.codeSearch.title}
             </a>
-          </li>--!>
+          </li>
           <li>
             <a class="list-group-item py-1" href="..${pages.DL.href}">
               <img class="i-15 me-1" src="..${pages.DL.icon}" alt="">
@@ -252,11 +252,17 @@ const asideHtml = `
       </a>
     </div>
     <div class="p-1 my-1 border-start border-3 border-primary">
+      <a class="dropdown-item d-flex mb-1" href="..${pages.setting.href}">
+        <img class="i-15 me-1" src="..${pages.setting.icon}" alt="">
+        <span>${pages.setting.title}</span>
+      </a>
+    </div>
+    <div class="p-1 my-1 border-start border-3 border-primary">
       <a class="dropdown-item d-flex mb-1" href="..${pages.about.href}">
         <img class="i-15 me-1" src="..${pages.about.icon}" alt="">
         <span>${pages.about.title}</span>
       </a>
-      </div>
+    </div>
     <div class="arriveTerm card bg-primary-subtle border-2 my-3 ${showArriveTerm(toolsSet()[2])}">
       <h6 class="card-header text-center text-primary fw-bolder">到案日期</h6>
       <div class="card-body p-2 text-center fw-bolder">

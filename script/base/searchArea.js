@@ -109,16 +109,6 @@ const html_searchArea =`
   </div>
   `;
 
-  //讀取瀏覽器設定，刷新搜尋區域
-function load_searchBar(html_searchArea) {
-  if ($('title').html() == '首頁 - 交通鴿手'){
-    $('#searchArea').html(html_searchArea.replaceAll('..','.'));
-  }
-  else{
-    $('#searchArea').html(html_searchArea);
-  }
-}
-
   //函式：點擊選項開關，儲存搜尋設定進瀏覽器
 function save_options(){
   $('input[name="searchSwitch"]').on('change',(e)=>{
@@ -212,7 +202,12 @@ function search_go(){
 }
 
 // 主程式
-load_searchBar(html_searchArea);
+if ($('title').html() == '交通鴿手'){
+  $('#searchArea').html(html_searchArea.replaceAll('..','.'));
+}
+else{
+  $('#searchArea').html(html_searchArea);
+}
 $(document).ready(()=>{
   load_options();
   save_options();
