@@ -3,16 +3,11 @@ import { list_kp } from '../data/kp_list.js';
 import { WebData } from './getWebData.js';
 
 // 版本與組建版本
-const appVer = `1.21.0`;
+const appVer = `1.20.3`;
 const buildNumber = 1130613;
 
 // 公告
 const notice = `
-  <span id="newVerNotice"></span>
-  「交通鴿手」v1.21更新重點：
-  <ul>
-  <li>「違規代碼查詢」已更新到最新代碼表，重新上線</li>
-  </ul>
   <br>已知問題：
   <ul>
   <li>違規代碼查詢為即時運算，輸入會較為延遲敬請見諒。</li>
@@ -21,18 +16,6 @@ const notice = `
   </ul>
 `;
 
-// 手機版檢查新版本
-function checkMobileVer(){
-  let sheet = new WebData('15WEuG9RoXWdaGws3yhIgYj_0G0Q7ukmMwKe5CXNZZfs', 'info', 'AIzaSyAHvCcIcGd3RaTSi5VhW0AsQos-7qIPH4g');
-  $.get(sheet.url, (json) => {
-    let lastBuildNumber = json.values[2][2];
-    if (lastBuildNumber > buildNumber) {
-      $('#newVerNotice').html(`
-        <big class="text-danger">APP有新版本，請立即至「關於」更新！！</big><hr>
-        `)
-    }
-  })
-}
 
 // 更新日誌
   // 新功能用info
@@ -178,5 +161,4 @@ $(document).ready(() => {
   $('#app_ver').html(appVer);
   $('#showUpdate').click(()=>{popUpHTML('更新日誌', updataText)});
   $('#showRG').click(()=>{popUpHTML('收錄法規', collectionRG())});
-  checkMobileVer();
 })
