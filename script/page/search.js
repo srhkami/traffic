@@ -1,6 +1,5 @@
 import { pages } from '../base/pages.js';
-import { list_kp } from '../data/kp_list.js';
-// import { btnHTML, showAttachment } from './regulations.js';
+import { list_kp } from '../list/kp_list.js';
 
 // 函式：開始搜尋
 function search_start(keyWord, options) {
@@ -25,14 +24,14 @@ function search_every(keyWord, r_object) {
   let new_list = [];
   r_object.list.forEach((value) => {
     if (value.text.includes(keyWord)) {
-      let newItem = {
+      let netItem = {
         code: r_object.code,
         article: value.article,
         index: `《${r_object.title}》第 ${value.article} 條`,
         title: value.title,
         text: value.text.replaceAll(keyWord, `<mark>${keyWord}</mark>`)
       };
-      new_list.push(newItem);
+      new_list.push(netItem);
     }
   });
   return new_list;
@@ -71,7 +70,7 @@ function search_again(keyWord, old_list) {
 function refresh_list(list_output) {
   let html = '';
   list_output.forEach((value) => {
-    if (value.article == '-1'){ //排除附件
+    if (value.article == '-1'){
       //pass
     }
     else{
@@ -135,7 +134,7 @@ function refresh_text(list_output, keyWord) {
       <div id="article-${value.code}-${value.article}" class="article">
         <div class="article-title d-flex mt-4 mb-2 pb-1 border-bottom border-primary-subtle">
             <h4 class="d-inline me-auto" data-rg="${value.rg}">${value.index}</h4>
-            ${btnHTML(value.code, value.article)}
+            <!-- <button type="button" class="btn btn-primary btn-sm me-2 h-75" disabled>分享</button> --!>
         </div>
         <div class="col-data">
             <div class="law-article">
@@ -147,46 +146,6 @@ function refresh_text(list_output, keyWord) {
     }
   });
   return html;
-}
-
-// 函式：內文顯示按鈕的特例
-function btnHTML(code, article){
-  let html = '';
-  if(code=='ML'){ //設置規則附圖的按鈕
-    html=`
-      <button type="button" class="bth_attachment btn btn-primary btn-sm me-2 h-75" data-bs-toggle="modal" data-bs-target="#popUpArea" data-article="${article}">附圖</button>
-    `;
-  }
-  return html;
-}
-
-// 函式：顯示設置規則附件
-export function showAttachment(r_list) {
-  $('.bth_attachment').click((e) => {
-    let article = e.target.dataset.article
-    r_list.forEach((value) => {
-      if (article == value.article) {
-        let html = `
-        <div class="modal-dialog" >
-          <div class="modal-content" >
-            <div class="modal-header">
-              <h5 class="modal-title">附件圖片</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-secondary" >
-              ${value.img}
-            </div>
-            <div class="modal-footer">
-              <p class="me-auto text-secondary">註：建議使用亮色主題觀看</p>
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-            </div>
-          </div>
-        </div>    
-        `
-        $('#popUpArea').html(html);
-      }
-    })
-  })
 }
 
 // 主程式開始
@@ -225,7 +184,6 @@ $(document).ready(() => {
   $('#btn_reSearch').click(()=>{
     $('#keyWord').val(getData.get('keyword'))
   })
-  showAttachment(pages.ML.list);
 })
 
 

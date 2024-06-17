@@ -1,13 +1,18 @@
 import { pages } from './pages.js';
-import { list_kp } from '../data/kp_list.js';
-import { WebData } from './getWebData.js';
+import { list_kp } from '../list/kp_list.js'
 
-// 版本與組建版本
-const appVer = `1.20.3`;
-const buildNumber = 1130613;
+// 版本號(大版本.小版本.日+時)
+const app_ver = `1.20.3`;
 
 // 公告
 const notice = `
+  <span class="text-danger">手機版尚未支援自動更新，請每週檢查是否有新版本</span>
+  <br>
+  <br>「交通鴿手」v1.20更新重點：
+  <ul>
+  <li>整體介面更新、排版 ，增加書籤及自訂介面功能。</li>
+  <li>加入「違規代碼查詢」頁面。(因發現問題暫時下架，稍後上線)</li>
+  </ul>
   <br>已知問題：
   <ul>
   <li>違規代碼查詢為即時運算，輸入會較為延遲敬請見諒。</li>
@@ -16,18 +21,12 @@ const notice = `
   </ul>
 `;
 
-
 // 更新日誌
   // 新功能用info
   // 更新功能用success
   // 修復用danger
   // <li class="text-info"></li>
 const updataText = `
-<h5 class="text-primary">※ 1.21：</h5>
-  <ul>
-    <li class="text-success">「搜尋」現在也可查看設置規則附圖。</li>
-    <li class="text-danger">「違規代碼查詢」已更新到最新代碼表，重新上線。</li>
-    </ul>
   <h5 class="text-primary">※ 1.20：</h5>
   <ul>
     <li class="text-info">更新了整體介面、排版，將選單列移至側邊。</li>
@@ -158,7 +157,7 @@ function popUpHTML(title, text){
 $(document).ready(() => {
   $('#notice').html(notice);
   $('#future').html(aboutThisWeb);
-  $('#app_ver').html(appVer);
+  $('#app_ver').html(app_ver);
   $('#showUpdate').click(()=>{popUpHTML('更新日誌', updataText)});
   $('#showRG').click(()=>{popUpHTML('收錄法規', collectionRG())});
 })

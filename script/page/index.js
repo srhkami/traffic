@@ -2,6 +2,7 @@
 // 函式：是否顯示小工具
 function toolsSet(){
   let toolsOption = JSON.parse(localStorage.getItem('toolsOption'));
+  console.log(toolsOption);
   if (toolsOption[0]==0){
     $('#quickArea').addClass('d-none');
   }

@@ -163,11 +163,11 @@ const asideHtml = `
       </a>
       <div class="collapse ${loadSidebar(2)[1]}" id="collapseExample2">
         <ul class="m-0" style="list-style-type:none">
-          <li>
+          <!-- <li>
             <a class="list-group-item py-1" href="..${pages.codeSearch.href}">
               <img class="i-15 me-1" src="..${pages.codeSearch.icon}" alt="">
               ${pages.codeSearch.title}
-            </a>
+            </a> --!>
           </li>
           <li>
             <a class="list-group-item py-1" href="..${pages.DL.href}">
@@ -256,7 +256,7 @@ const asideHtml = `
         <img class="i-15 me-1" src="..${pages.about.icon}" alt="">
         <span>${pages.about.title}</span>
       </a>
-    </div>
+      </div>
     <div class="arriveTerm card bg-primary-subtle border-2 my-3 ${showArriveTerm(toolsSet()[2])}">
       <h6 class="card-header text-center text-primary fw-bolder">到案日期</h6>
       <div class="card-body p-2 text-center fw-bolder">

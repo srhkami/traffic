@@ -190,18 +190,8 @@ export const pages = {
     '關於',
     '關於',
     '',
-    '/icons/icon_about.png',
-    '/pages/about.html',
-    ''
-  ),
-  setting: new Page(
-    '頁面',
-    'setting',
-    '設定',
-    '設定',
-    '',
     '/icons/icon_setting.png',
-    '/pages/setting.html',
+    '/pages/about.html',
     ''
   ),
   feedback: new Page(
