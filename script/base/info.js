@@ -2,7 +2,7 @@ import { pages } from './pages.js';
 import { list_kp } from '../list/kp_list.js'
 
 // 版本號(大版本.小版本.日+時)
-const app_ver = `1.20.3`;
+const app_ver = `1.20.4`;
 
 // 公告
 const notice = `
@@ -11,7 +11,6 @@ const notice = `
   <br>「交通鴿手」v1.20更新重點：
   <ul>
   <li>整體介面更新、排版 ，增加書籤及自訂介面功能。</li>
-  <li>加入「違規代碼查詢」頁面。(因發現問題暫時下架，稍後上線)</li>
   </ul>
   <br>已知問題：
   <ul>
@@ -30,7 +29,6 @@ const updataText = `
   <h5 class="text-primary">※ 1.20：</h5>
   <ul>
     <li class="text-info">更新了整體介面、排版，將選單列移至側邊。</li>
-    <li class="text-info">加入「違規代碼查詢」頁面。</li>
     <li class="text-info">加入「書籤」功能。</li>
     <li class="text-info">「關於」頁面加入「介面設定」功能。</li>
     <li class="text-success">首頁「快速導航」及「到案日期」功能改版，現在可自訂是否顯示。</li>
