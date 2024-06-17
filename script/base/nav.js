@@ -252,12 +252,6 @@ const asideHtml = `
       </a>
     </div>
     <div class="p-1 my-1 border-start border-3 border-primary">
-      <a class="dropdown-item d-flex mb-1" href="..${pages.setting.href}">
-        <img class="i-15 me-1" src="..${pages.setting.icon}" alt="">
-        <span>${pages.setting.title}</span>
-      </a>
-    </div>
-    <div class="p-1 my-1 border-start border-3 border-primary">
       <a class="dropdown-item d-flex mb-1" href="..${pages.about.href}">
         <img class="i-15 me-1" src="..${pages.about.icon}" alt="">
         <span>${pages.about.title}</span>
