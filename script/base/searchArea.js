@@ -202,13 +202,13 @@ function search_go(){
 }
 
 // 主程式
-// if ($('title').html() == '交通鴿手'){
-//   $('#searchArea').html(html_searchArea.replaceAll('..','.'));
-// }
-// else{
-//   $('#searchArea').html(html_searchArea);
-// }
-$('#searchArea').html(html_searchArea);
+if ($('title').html() == '交通鴿手'){
+  $('#searchArea').html(html_searchArea.replaceAll('..','./traffic'));
+}
+else{
+  $('#searchArea').html(html_searchArea);
+}
+// $('#searchArea').html(html_searchArea);
 $(document).ready(()=>{
   load_options();
   save_options();
