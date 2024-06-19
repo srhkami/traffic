@@ -2,7 +2,7 @@ import { pages } from './pages.js';
 import { list_kp } from '../list/kp_list.js'
 
 // 版本號(大版本.小版本.日+時)
-const app_ver = `1.20.4`;
+const app_ver = `1.20.5`;
 
 // 公告
 const notice = `
