@@ -1,4 +1,4 @@
-import { pages } from "../list/pages.js";
+import { pages } from "../base/pages.js";
 
 // 函式：讀取書籤
 function loadBookmark() {
