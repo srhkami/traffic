@@ -2,31 +2,30 @@
 <html data-bs-theme="light">
 
 <head>
-  <script src="./script/base/jquery-3.7.1.min.js"></script>
+  <title>交通鴿手</title>
+  <script src="./script/module/jquery-3.7.1/jquery-3.7.1.min.js"></script>
   <script src='./script/base/theme.js'></script>
+  <script src="./script/module/bootstrap-5.3.3/bootstrap.bundle.min.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>交通鴿手</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
   <link href="./style/base/bootstrap.css" rel="stylesheet">
-  <script src="./script/bootstrap-5.3.3/bootstrap.bundle.min.js"></script>
-  <!-- 設定檔 -->
+  <!-- 個別設定檔 -->
   <link rel="stylesheet" href="./style/base/general.css" />
   <link rel="stylesheet" href="./style/page/index.css" />
   <script type='module' src='./script/base/nav.js'></script>
-  <!-- <script type='module' src='./script/base/searchArea.js'></script> -->
+  <script type='module' src='./script/base/searchArea.js'></script>
   <script type='module' src="./script/page/index.js"></script>
   <script type='module' src="./script/base/quickEnter.js"></script>
-  <script type='module' src="./script/base/info.js"></script>
 </head>
 
 <body>
   <nav id="pageHeader" class="sticky-top navbar navbar-expand-lg bg-body"></nav>
   <!-- 彈出視窗 -->
   <div id="popUp">
-    <!-- 搜尋 -->
+    <!-- 搜尋 上線時要是靜態HTML-->
     <div id="searchArea" class="modal fade" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -159,7 +158,7 @@
     <aside id="sidebar" class="offcanvas-lg offcanvas-start overflow-hidden me-2"></aside>
     <div id="mainContent" class="px-2 w-100">
       <div class="row my-2">
-        <div class="col-12 col-lg-10 mx-auto">
+        <div class="col-12 col-lg-11 mx-auto">
           <div id="carouselExample" class="carousel slide shadow-lg" data-bs-ride="carousel">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
@@ -168,13 +167,13 @@
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <a href="./file/index/1130514_處罰條例修正案條文對照.pdf">
-                  <img src="./file/index/修正案.png" class="d-block w-100" alt="...">
+                <a id="showUpdate" data-bs-toggle="modal" data-bs-target="#popUpArea">
+                  <img src="./file/index/版本更新1.21.png" class="d-block w-100" alt="...">
                 </a>
               </div>
               <div class="carousel-item">
-                <a id="showUpdate" data-bs-toggle="modal" data-bs-target="#popUpArea">
-                  <img src="./file/index/版本更新.png" class="d-block w-100" alt="...">
+                <a href="./file/index/1130514_處罰條例修正案條文對照.pdf">
+                  <img src="./file/index/修正案.png" class="d-block w-100" alt="...">
                 </a>
               </div>
             </div>

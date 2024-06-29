@@ -1,34 +1,66 @@
 import { pages } from './pages.js';
-import { list_kp } from '../list/kp_list.js'
+import { list_kp } from '../data/kp_list.js';
+import {WebData} from '../data/database.js';
 
-// 版本號(大版本.小版本.日+時)
-const app_ver = `1.20.6`;
+// 版本
+export const appVer = `1.21.0`;
+// 組建：用以判斷版本前後
+export const buildNumber = 1130630;
+// 資料庫版本
+// export const defaultDataVer = 1130613;
 
 // 公告
-const notice = `
-  <span class="text-danger">手機版尚未支援自動更新，請每週檢查是否有新版本</span>
-  <br>
-  <br>「交通鴿手」v1.20更新重點：
+export const notice = `
+  <span id="newVerNotice"></span>
+  「交通鴿手」v1.21更新重點：
   <ul>
-  <li>整體介面更新、排版 ，增加書籤及自訂介面功能。</li>
+    <li>「違規代碼查詢」重新上線，更新至1130630版代碼。</li>
+    <li>「處罰條例」更新至1130630施行版本。</li>
+    <li>手機版會自動偵測有無新版本。</li>
   </ul>
   <br>已知問題：
   <ul>
-  <li>違規代碼查詢為即時運算，輸入會較為延遲敬請見諒。</li>
-  <li>附件連結至全國法規資料庫，在首次點擊時總會失效。</li>
-  <li>使用內網瀏覽設置規則圖片可能無法顯示。</li>
+    <li>附件連結至全國法規資料庫，在首次點擊時總會失效。</li>
+    <li>使用內網瀏覽設置規則圖片可能無法顯示。</li>
   </ul>
 `;
+
+// 手機版檢查新版本及刷新圖片
+export function checkMobileVer(){
+  let sheet = new WebData('15WEuG9RoXWdaGws3yhIgYj_0G0Q7ukmMwKe5CXNZZfs', 'info', 'AIzaSyAHvCcIcGd3RaTSi5VhW0AsQos-7qIPH4g');
+  $.get(sheet.url, (json) => {
+    let lastBuildNumber = json.values[2][2];
+    if (lastBuildNumber > buildNumber) {
+      $('#newVerNotice').html(`
+        <big class="text-danger">APP有新版本！</big>
+        <a class="btn btn-sm btn-outline-danger ms-2" href="https://drive.google.com/drive/folders/1pmV6WZVdZ0RyfL8TvVDh9OI5Kc2OwkBO?usp=drive_link">下載更新<a/>
+        <hr>
+        `)
+    }
+  })
+}
 
 // 更新日誌
   // 新功能用info
   // 更新功能用success
   // 修復用danger
   // <li class="text-info"></li>
-const updataText = `
+  export const updataText = `
+  <h5 class="text-primary">※ 1.21：</h5>
+  <ul>
+    <li class="text-info">加入「違規代碼查詢」頁面，代碼表版本1130630。</li>
+    <li class="text-info">手機版現在可以自動偵測有無新版本。</li>
+    <li class="text-info">側邊欄新增「歲數查詢」小工具。</li>
+    <li class="text-success">「搜尋結果」現在也可查看設置規則附圖。</li>
+    <li class="text-success">「處罰條例」更新至1130529修訂版本（1130630施行）。</li>
+    <li class="text-danger">修復首頁無法使用自訂搜尋的問題。</li>
+    <li class="text-danger">修復側邊欄在不同頁面寬度及文字大小不一的問題。</li>
+    <li class="text-danger">修復法規附件超出頁面高度的問題。</li>
+  </ul>
   <h5 class="text-primary">※ 1.20：</h5>
   <ul>
     <li class="text-info">更新了整體介面、排版，將選單列移至側邊。</li>
+    <li class="text-info">加入「違規代碼查詢」頁面。</li>
     <li class="text-info">加入「書籤」功能。</li>
     <li class="text-info">「關於」頁面加入「介面設定」功能。</li>
     <li class="text-success">首頁「快速導航」及「到案日期」功能改版，現在可自訂是否顯示。</li>
@@ -84,7 +116,7 @@ const updataText = `
 `;
 
 // 關於此網站
-const aboutThisWeb = `
+export const aboutThisWeb = `
   這是一個，以交通為志趣的小小警員，
   <br>所架設的簡易網站，  
   <br>目標是整理所有與交通執法、交通安全有關的資訊，
@@ -99,7 +131,7 @@ const aboutThisWeb = `
   <br>歡迎使用選單中「更多→意見回饋」讓我知道。 
 `;
 // 收錄法規
-function collectionRG() {
+export function collectionRG() {
   let html = '<ul class="ps-3">';
   Object.values(pages).forEach((value) => {
     if (value.type == '法規') {
@@ -115,7 +147,7 @@ function collectionRG() {
   return html;
 }
 // 收錄文章
-function collectionEssay() {
+export function collectionEssay() {
   let html = '';
   list_kp.forEach((value) => {
     html += `
@@ -129,9 +161,8 @@ function collectionEssay() {
   return html;
 }
 
-
 // 函式：彈出視窗的HTML
-function popUpHTML(title, text){
+export function popUpHTML(title, text){
   let html=`
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
@@ -150,12 +181,3 @@ function popUpHTML(title, text){
   `;
   $('#popUpArea').html(html);
 }
-
-// 刷新首頁
-$(document).ready(() => {
-  $('#notice').html(notice);
-  $('#future').html(aboutThisWeb);
-  $('#app_ver').html(app_ver);
-  $('#showUpdate').click(()=>{popUpHTML('更新日誌', updataText)});
-  $('#showRG').click(()=>{popUpHTML('收錄法規', collectionRG())});
-})

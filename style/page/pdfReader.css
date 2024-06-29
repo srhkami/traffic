@@ -1,0 +1,11 @@
+object{
+  height:calc(100vh - 90px); 
+  width: calc(100vw) !important;
+}
+
+@media (min-width:992px) {
+  object{
+    height:calc(100vh - 90px); 
+    width: calc(100vw - 180px) !important;
+  }
+}

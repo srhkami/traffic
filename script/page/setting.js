@@ -1,5 +1,6 @@
 import { pages } from "../base/pages.js";
-import {appVer, buildNumber, popUpHTML, collectionRG, checkMobileVer} from '../base/info.js'
+import { updateData } from "../data/database.js";
+import { checkLocalData } from "../data/database.js"
 
 // 函式：讀取書籤
 function loadBookmark() {
@@ -131,10 +132,7 @@ function toolsSet(){
   if (toolsOption[2]==0){
     $('#check-2').attr('checked',false)
   }
-  if (toolsOption[3]==0){
-    $('#check-3').attr('checked',false)
-  }
-  $('#check-0,#check-1,#check-2,#check-3').change(()=>{
+  $('#check-0,#check-1,#check-2').change(()=>{
     if($('#check-0').is(':checked')){
       toolsOption[0] = 1;
     }
@@ -153,14 +151,13 @@ function toolsSet(){
     else{
       toolsOption[2] = 0;
     }
-    if($('#check-3').is(':checked')){
-      toolsOption[3] = 1;
-    }
-    else{
-      toolsOption[3] = 0;
-    }
     localStorage.setItem('toolsOption',JSON.stringify(toolsOption));
   })
+}
+
+// 資料庫更新
+function btnUpdateData(){
+  $('#dataVer-check').click(()=> updateData())
 }
 
 // 主程式
@@ -171,14 +168,6 @@ Object.values(pages).forEach((i) => {
   }
 });
 refleshSetArea();
-toolsSet()
-$(document).ready(() => {
-  // APP版本
-  $('#appVer').html(appVer);
-  $('#buildNumber').html(`更新日期：${buildNumber}`);
-  // 資料庫版本
-  // localforage.getItem('dataVer', (err, localDataVer) => {$('#dataVer').html(localDataVer)});
-  // 收錄法規
-  $('#showRG').click(()=>{popUpHTML('收錄法規', collectionRG())});
-  checkMobileVer();
-})
+toolsSet();
+btnUpdateData();
+checkLocalData();
