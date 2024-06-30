@@ -1,5 +1,5 @@
 import { pages } from "../base/pages.js";
-import {appVer, buildNumber, popUpHTML, collectionRG, checkMobileVer} from '../base/info.js'
+import { appVer, buildNumber, popUpHTML, updataText, collectionRG, checkMobileVer } from '../base/info.js'
 
 // 函式：讀取書籤
 function loadBookmark() {
@@ -77,7 +77,7 @@ function refleshSetArea() {
   btnClick();
 }
 // 按鈕點擊監聽
-function btnClick(){
+function btnClick() {
   $('.btn-add').click(e => itemAdd(e.target.dataset.page));
   $('.btn-delete').click(e => itemDelete(e.target.dataset.page));
   $('.btn-up').click(e => itemUp(e.target.dataset.page));
@@ -85,81 +85,81 @@ function btnClick(){
 
 }
 // 加入書籤項目
-function itemAdd(page){
+function itemAdd(page) {
   let bookmarkOption = loadBookmark();
   bookmarkOption.push(page);
-  localStorage.setItem('bookmark',JSON.stringify(bookmarkOption));
+  localStorage.setItem('bookmark', JSON.stringify(bookmarkOption));
   refleshSetArea();
 }
 // 刪除書籤項目
-function itemDelete(page){
+function itemDelete(page) {
   let bookmarkOption = loadBookmark();
-  bookmarkOption = bookmarkOption.filter(item =>{return item !== page});
-  localStorage.setItem('bookmark',JSON.stringify(bookmarkOption));
+  bookmarkOption = bookmarkOption.filter(item => { return item !== page });
+  localStorage.setItem('bookmark', JSON.stringify(bookmarkOption));
   refleshSetArea();
 }
 // 往上移
-function itemUp(page){
+function itemUp(page) {
   let bookmarkOption = loadBookmark();
   let x = bookmarkOption.indexOf(page);
-  if(x != 0){
-    [bookmarkOption[x],bookmarkOption[x-1]] = [bookmarkOption[x-1],bookmarkOption[x]]
+  if (x != 0) {
+    [bookmarkOption[x], bookmarkOption[x - 1]] = [bookmarkOption[x - 1], bookmarkOption[x]]
   }
-  localStorage.setItem('bookmark',JSON.stringify(bookmarkOption));
+  localStorage.setItem('bookmark', JSON.stringify(bookmarkOption));
   refleshSetArea();
 }
 // 往下移
-function itemDown(page){
+function itemDown(page) {
   let bookmarkOption = loadBookmark();
   let x = bookmarkOption.indexOf(page);
-  if(x != bookmarkOption.length-1){
-    [bookmarkOption[x],bookmarkOption[x+1]] = [bookmarkOption[x+1],bookmarkOption[x]]
+  if (x != bookmarkOption.length - 1) {
+    [bookmarkOption[x], bookmarkOption[x + 1]] = [bookmarkOption[x + 1], bookmarkOption[x]]
   }
-  localStorage.setItem('bookmark',JSON.stringify(bookmarkOption));
+  localStorage.setItem('bookmark', JSON.stringify(bookmarkOption));
   refleshSetArea();
 }
 
 // 小工具顯示設定
-function toolsSet(){
+function toolsSet() {
   let toolsOption = JSON.parse(localStorage.getItem('toolsOption'));
-  if (toolsOption[0]==1){
-    $('#check-0').attr('checked',true)
+  if (toolsOption[0] == 1) {
+    $('#check-0').attr('checked', true)
   }
-  if (toolsOption[1]==1){
-    $('#check-1').attr('checked',true)
+  if (toolsOption[1] == 1) {
+    $('#check-1').attr('checked', true)
   }
-  if (toolsOption[2]==0){
-    $('#check-2').attr('checked',false)
+  if (toolsOption[2] == 0) {
+    $('#check-2').attr('checked', false)
   }
-  if (toolsOption[3]==0){
-    $('#check-3').attr('checked',false)
+  if (toolsOption[3] == 0) {
+    $('#check-3').attr('checked', false)
   }
-  $('#check-0,#check-1,#check-2,#check-3').change(()=>{
-    if($('#check-0').is(':checked')){
+  $('#check-0,#check-1,#check-2,#check-3').change(() => {
+    if ($('#check-0').is(':checked')) {
       toolsOption[0] = 1;
     }
-    else{
+    else {
       toolsOption[0] = 0;
     }
-    if($('#check-1').is(':checked')){
+    if ($('#check-1').is(':checked')) {
       toolsOption[1] = 1;
     }
-    else{
+    else {
       toolsOption[1] = 0;
     }
-    if($('#check-2').is(':checked')){
+    if ($('#check-2').is(':checked')) {
       toolsOption[2] = 1;
     }
-    else{
+    else {
       toolsOption[2] = 0;
     }
-    if($('#check-3').is(':checked')){
+    if ($('#check-3').is(':checked')) {
       toolsOption[3] = 1;
     }
-    else{
+    else {
       toolsOption[3] = 0;
     }
-    localStorage.setItem('toolsOption',JSON.stringify(toolsOption));
+    localStorage.setItem('toolsOption', JSON.stringify(toolsOption));
   })
 }
 
@@ -178,7 +178,9 @@ $(document).ready(() => {
   $('#buildNumber').html(`更新日期：${buildNumber}`);
   // 資料庫版本
   // localforage.getItem('dataVer', (err, localDataVer) => {$('#dataVer').html(localDataVer)});
+  // 更新日誌彈出視窗
+  $('#showUpdate').click(() => { popUpHTML('更新日誌', updataText) });
   // 收錄法規
-  $('#showRG').click(()=>{popUpHTML('收錄法規', collectionRG())});
-  checkMobileVer();
+  $('#showRG').click(() => { popUpHTML('收錄法規', collectionRG()) });
+  // checkMobileVer();
 })

@@ -3,9 +3,9 @@ import { list_kp } from '../data/kp_list.js';
 import {WebData} from '../data/database.js';
 
 // 版本
-export const appVer = `1.21.0`;
+export const appVer = `1.21.1`;
 // 組建：用以判斷版本前後
-export const buildNumber = 1130630;
+export const buildNumber = 1130630.1;
 // 資料庫版本
 // export const defaultDataVer = 1130613;
 
@@ -25,15 +25,14 @@ export const notice = `
   </ul>
 `;
 
-// 手機版檢查新版本及刷新圖片
+// 手機版檢查新版本
 export function checkMobileVer(){
   let sheet = new WebData('15WEuG9RoXWdaGws3yhIgYj_0G0Q7ukmMwKe5CXNZZfs', 'info', 'AIzaSyAHvCcIcGd3RaTSi5VhW0AsQos-7qIPH4g');
   $.get(sheet.url, (json) => {
     let lastBuildNumber = json.values[2][2];
     if (lastBuildNumber > buildNumber) {
       $('#newVerNotice').html(`
-        <big class="text-danger">APP有新版本！</big>
-        <a class="btn btn-sm btn-outline-danger ms-2" href="https://drive.google.com/drive/folders/1pmV6WZVdZ0RyfL8TvVDh9OI5Kc2OwkBO?usp=drive_link">下載更新<a/>
+        <big class="text-danger">APP有新版本！<br>請至「交通鴿手」網站下載更新！</big>
         <hr>
         `)
     }
