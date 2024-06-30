@@ -407,7 +407,7 @@ function ageCalculate(){
       const date = new Date();
       const age = date.getFullYear() - 1911 - birthYear;
       alert(
-        `生日在${birthYear}/${addZero(date.getMonth() + 1)}/${addZero(date.getDate())}以前：滿 ${age} 歲\n生日逾${birthYear}/${addZero(date.getMonth() + 1)}/${addZero(date.getDate() +1 )}之後：滿 ${age-1} 歲`
+        `生日在${birthYear}/${addZero(date.getMonth() + 1)}/${addZero(date.getDate())}以前：滿 ${age} 歲\n生日逾${birthYear}/${addZero(date.getMonth() + 1)}/${addZero(date.getDate())}之後：滿 ${age-1} 歲`
       );
     }
   })
