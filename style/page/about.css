@@ -1,0 +1,25 @@
+@media (min-width:768px){
+    #mainContent{
+        display: grid;
+        grid-template-columns:1fr 250px;
+        gap: 1.5rem;
+    }
+    .col-list{
+        position: sticky;
+        height: calc(100vh - 10rem);
+        top: 5rem;
+    }
+}
+
+
+/* 目錄排版 */
+.item-second{
+    font-size: 14px;
+    padding-left: 2em;
+}
+
+.article-title h4{
+    color: rgb(50, 120, 250);
+    font-weight: 600;
+    
+}

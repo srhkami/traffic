@@ -1,0 +1,17 @@
+/* 法條清單排版 */
+#list-article{
+    /* list-groud因不明原因導致下方被遮擋，暫時透過此設定解決 */
+    padding-bottom: 55px;
+}
+.list-article-no{
+    width: 100%;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    text-align: left;
+    font-size: 14px;
+}
+.list-article-title{
+    width: 100%;
+    font-size: 13px;
+    padding-left: 2em;
+}

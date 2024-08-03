@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark">
+
+<head>
+  <title>PDF - 交通鴿手</title>
+  <script src="../script/module/jquery-3.7.1/jquery-3.7.1.min.js"></script>
+  <script src='../script/base/theme.js'></script>
+  <script src="../script/module/bootstrap-5.3.3/bootstrap.bundle.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+  <link href="../style/base/bootstrap.css" rel="stylesheet">
+  <!-- 設定檔 -->
+  <link rel="stylesheet" href="../style/base/general.css" />
+  <link rel="stylesheet" href="../style/page/pdfReader.css" />
+  <script type='module' src='../script/base/nav.js'></script>
+  <script type='module' src='../script/base/searchArea.js'></script>
+  <script type='module' src='../script/page/about.js'></script>
+  <script type='module' src='../script/base/info.js'></script>
+</head>
+
+<body>
+  <nav id="pageHeader" class="sticky-top navbar navbar-expand-lg bg-body"></nav>
+  <!-- 彈出視窗 -->
+  <div id="popUp">
+    <!-- 搜尋 -->
+    <div class="modal fade" id="searchArea" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
+    <!-- 通用彈出視窗 -->
+    <div id="popUpArea" class="modal fade" tabindex="-1">
+      <div class="modal-dialog modal-dialog-scrollable"></div>
+    </div>
+    <!-- 書籤設定 -->
+    <div id="bookmarkSet" class="modal fade" tabindex="-1">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">管理書籤</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="bookmarkSetArea" class="px-2">
+              <h5>已加入書籤</h5>
+              <div id="added">
+                <div class="border border-2 rounded my-1 row align-items-center">
+                  <div class="col-2">
+                    <button class="btn btn-delete" data-page="PH">
+                      <svg class="i-12 ms-2 my-auto" fill="#5A96FA" data-page="PH">
+                        <use xlink:href="../icons/bootstrap-icons.svg#dash-circle-fill" data-page="PH"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="col-6">
+                    <img src="../icons/icon_policeman.png" class="i-15" alt="">
+                    處罰條例
+                  </div>
+                  <div class="col-2">
+                    <button class="btn">
+                      <svg class="i-12 ms-2 my-auto" fill="#5A96FA">
+                        <use xlink:href="../icons/bootstrap-icons.svg#caret-up-fill"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="col-2">
+                    <button class="btn">
+                      <svg class="i-12 ms-2 my-auto" fill="#5A96FA">
+                        <use xlink:href="../icons/bootstrap-icons.svg#caret-down-fill"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <h5>未加入書籤</h5>
+              <div id="notAdd">
+                <div class="border border-2 rounded my-1 row align-items-center">
+                  <div class="col-2">
+                    <button class="btn btn-add" data-page="PH">
+                      <svg class="i-12 ms-2 my-auto" fill="#5A96FA" data-page="PH">
+                        <use xlink:href="../icons/bootstrap-icons.svg#plus-circle-fill" data-page="PH"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="col-6">
+                    <img src="../icons/icon_policeman.png" class="i-15" alt="">
+                    處罰條例
+                  </div>
+                  <div class="col-2">
+                  </div>
+                  <div class="col-2">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">確認</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main class="container-xl d-flex">
+    <!-- 側邊選單 -->
+    <aside id="sidebar" class="offcanvas-lg offcanvas-start overflow-hidden me-2"></aside>
+    <div id="mainContent" class="py-3">
+      <div class="row">
+        <object type="application/pdf" data="../file/index/1130514_處罰條例修正案條文對照.pdf" class="ms-xl-2"></object>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
